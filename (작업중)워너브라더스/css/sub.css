@@ -1,0 +1,475 @@
+@import url(common.css);
+@import url(sub_common.css);
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+/*사용한 웹폰트
+font-family: 'Radio Canada', sans-serif;
+font-family: 'Exo', sans-serif;
+font-family: 'Staatliches', cursive;
+font-family: 'Raleway', sans-serif;
+font-family: 'Bellota', cursive;
+font-family: 'Bebas Neue', cursive;
+*/
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* *--------------1.Movies-------------------- */
+/* 섹션 */
+
+
+
+.movieVisual_in{
+  width: 100%;
+  height: 780px;
+ /* background-color:cadetblue; */
+}
+
+
+
+.bb1{
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 650px;
+ /*  background-color: gold; */
+  overflow: hidden;
+}
+
+.bb1 img{
+  width: 120%;
+  height: 700px;
+/*   transform: scale(1.2); */
+  filter: blur(10px) brightness(20%);
+  
+  /* background-color: rgb(35, 35, 35); <----원래 검정배경*/
+  /* background-size:cover; */
+ 
+}
+
+
+.movieVisualBg{
+  width: 100%;
+  height: 650px;
+  /* background-color: rgb(35, 35, 35); <----원래 검정배경*/
+  background-size:cover;
+
+
+
+  
+ 
+}
+.bb2{
+  position: relative;
+  width: 1200px;
+  height: 650px;
+  margin: 0 auto;}
+
+
+.movieVisual{
+  width: 1200px;
+  height: 650px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: cornflowerblue;
+
+  /* test */
+  position: absolute;
+  z-index: 200;
+}
+
+.movieVisual img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* 비주얼 밑 슬라이드배너 */
+.banner{  /*배너전체영역*/
+	position:relative;
+	width:1200px;
+	height:75px;
+  margin: 0 auto;
+	/* background:rgb(185, 122, 133); */
+  background:transparent;
+}
+
+.banner .ban{   /*슬라이드영역*/
+	width:1200px;
+	height:75px;
+	overflow:hidden;
+	background:transparent;
+}
+
+.banner .ban ul{
+	width:1800px;  /* 슬라이드 150*12 =1800 */
+	position:relative;
+	left:-150px;  	/* 슬라이드 가로수정시 같이수정 */
+}
+.banner .ban ul li{
+	float:left;
+	width:150px;  
+	height:75px;
+  position: relative;
+}
+.banner ul li img{
+  width:100%;
+  height: 100%;
+  filter: blur(2px) brightness(50%);
+  position: absolute;
+  
+}
+
+.banner ul li .mt{ /*mt=movie title */
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  color:rgba(255, 255, 255, 0.475);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+/*좌우버튼*/
+.ban_btn{
+  width: 1200px;
+  height: 27px;
+  /* background-color: navy; */
+  background-color: transparent;
+  margin: 0 auto;
+  position: relative;
+}
+.ban_left{
+	position:absolute;
+	
+	cursor:pointer;
+}
+.ban_right{
+	position:absolute;
+  right: 0;
+	cursor:pointer;
+}
+.ban_btn span{
+	display:inline-block;
+	width:17px;
+	height:27px;	
+}
+.ban_btn .ban_left{background:url(../image/main-event-left_02.png) no-repeat;transition: all 0.1s;}
+.ban_btn .ban_right{background:url(../image/main-event-right_02.png) no-repeat;transition: all 0.1s;}
+.ban_btn .ban_left:hover{background:url(../image/main-event-left_01.png) no-repeat;}
+.ban_btn .ban_right:hover{background:url(../image/main-event-right_01.png) no-repeat;}
+
+
+/* stop/play */
+.playstop .stop2 { /* stop */
+	position: absolute;
+  right: 600px;
+  top:8px;
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_pause.png) no-repeat;
+}
+
+.playstop .play2 { /* play */
+	position: absolute;
+	right: 600px;
+  top:8px;
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_play.png) no-repeat;
+}
+
+
+
+
+
+
+
+
+
+/* ////////영화소개//////// */
+
+.moviePage{
+  width:1200px;
+  height: 1000px; 
+  margin: 40px auto;
+  /* background-color: crimson; */
+}
+
+.panel{
+	clear:both; 
+	color:rgb(48, 48, 48);
+	font-size:15px;
+	line-height:25px;
+}
+
+.panel li{
+  width: 1200px;
+  height: 1200px;
+  background-color:rgba(156, 186, 231, 0);
+}
+
+.panel li .mpTitle{ /* 영화제목 */
+  font-size: 40px;
+  text-align: center;
+  padding-top: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+}
+
+.mpBox img{filter: grayscale(100%); transition: all 0.3s;}
+.mpBox img:hover{filter: grayscale(0%);}
+
+
+.panel li .mpBox{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+.panel li .mpBox .mpPoster1 img{
+  width: 450px;
+  height: 700px;
+}
+
+
+.panel li .mpBox .mpGrid{
+  width: 750px;
+  height: 700px;
+ background-color: #4ebed4;
+}
+
+.panel li .mpBox .mpGrid .mpGridUp{
+  width: 750px;
+  height: 400px;
+  background-color: #d44ebe;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.panel li .mpBox .mpGrid .mpGridUp .mpAbout{
+  width: 484px;
+  height: 400px;
+  background-color: #212121;
+  color:whitesmoke;
+  padding:15px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  
+}
+.panel li .mpBox .mpGrid .mpGridUp .mpPoster2 img{
+  width: 266px;
+  height: 400px;
+  /* background-color: gold; */
+}
+
+
+.panel li .mpBox .mpGrid .mpGridDown{
+  width: 750px;
+  height: 300px;
+  background-color: #d4984e;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel li .mpBox .mpGrid .mpGridDown .mpPoster3 img{
+  width: 240px;
+  height: 300px;
+  background-color: #7c7c7c;
+}
+
+.panel li .mpBox .mpGrid .mpGridDown .mpPoster4 img{
+  width: 510px;
+  height: 300px;
+  background-color: #323232;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.movieBox{ /* 섹션-푸터 사이빈공간 */
+  width:1200px;
+  height: 50px;
+  margin: 900px auto 0;
+  background-color: transparent;
+}
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+/* *--------------2-1 TV New(였는데 additional로 바꾸고 2-1은 위에 따로 갈아엎을거-------------------- */
+
+
+
+#tabmenu h3{
+text-align:center;
+font-size:18px;
+margin:0 auto;
+padding-top:60px;
+padding-bottom:50px;
+color:#a57e41;
+font-weight:400;
+}
+#tabmenu{
+width:1200px;
+margin:0px auto;
+text-align:center;
+position: relative;
+}
+
+#tabmenu .blackTitle{
+  width: 300px;
+  height: 60px;
+  line-height: 60px;
+  background: rgb(10, 10, 10);
+  color:whitesmoke;
+  font-size: 30px;
+  position: absolute;
+  top:600px;
+  left: 0;
+  z-index: 9999;
+}
+
+
+.tab{display:inline-block; margin-top: 100px;}
+.tab li{
+float:left;
+display:block;
+width:400px;
+height:40px;
+border:1px solid #c6c6c6;
+font-size:20px;
+color:#272727;
+background-color: #f5f5f5;
+font-family: 'Merriweather', serif;
+font-weight:400;
+text-align:center;
+line-height:40px;
+box-sizing: border-box;
+transition: all 1s;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+
+
+.tab li.selected{  /*현재 선택된 탭메뉴*/
+background:#272727;
+color:#f5f5f5;
+border:1px solid #928676;
+font-weight:700;
+width:800px;
+box-sizing: border-box;
+transition: all 1s;
+}
+
+.panel2{
+clear:both;  /*float문제해결*/
+color:#fff;
+font-size:14px;
+line-height:25px;
+padding-bottom:100px;
+}
+
+
+
+.gallery{ 
+width:1200px;
+height:80vh;
+margin:0 auto;
+/* background:rgb(249, 255, 192); */
+position:relative;
+}
+.largeImg li{
+display:none;
+position:absolute;
+top:0;
+left: 0;
+
+}
+.largeImg li:first-child{display:block;}
+.largeImg li img{width:1200px; height: 650px;}
+
+.thumbs{
+position:absolute;
+bottom:30px;	
+left:0;	
+}
+.thumbs li{
+float:left;
+margin-right:10px;
+opacity:0.6;
+}
+.thumbs li:first-child{opacity:1;}
+.thumbs li a img{
+width:160px;
+height:80px;
+}
+
+
+.panel2 .content{
+  text-align:left;
+  margin-top:100px;
+}
+.panel2 h4{
+  font-size:24px;
+color:#826b51;
+font-weight:400;
+  
+}
+.panel2 h4 span{
+  display:block;
+  font-size:36px;
+font-weight:700;
+  margin-top:20px
+}
+.panel2 p{
+  font-size:18px;
+margin-top:60px;
+  line-height:30px;
+  color:#928676
+}
+.panel2 .btn{
+  float:right;
+width:150px;
+height:50px;
+line-height:50px;
+  text-align:center;
+background:#9f8771;
+color:#fff;
+  font-size:16px;
+  letter-spacing:3px;
+}
+
