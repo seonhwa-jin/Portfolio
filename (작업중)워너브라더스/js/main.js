@@ -17,13 +17,15 @@ $(document).ready(function(){
 
     $(".mainvisual .visual li").eq(showImg).removeClass("imgVisible"); //(기존)이미지 효과준 클래스 제거
     $(".mainvisual .visual li").eq(nextImg).addClass("imgVisible"); //이미지효과준 클래스 생성(새로 나타나는 이미지)
-    $(".mainvisual3 .btn>span").eq(showImg).removeClass("active");
+    $(".mainvisual .btn>span").eq(showImg).removeClass("active");
 
-    $(".mainvisual3 .btn>span").eq(nextImg).addClass("active"); //선택된 버튼
+    $(".mainvisual .btn>span").eq(nextImg).addClass("active"); //선택된 버튼
 
     showImg=nextImg;
-
   }
+
+
+
 
   timer1=setInterval(changeImg,5000);
 
@@ -38,29 +40,33 @@ $(document).ready(function(){
   function changeText(){ /* 일반함수(인자 자리가 공백인) */
 
     nextText++;
-    TextCount=$(".mainvisual2 .visual2 li").length;
+    TextCount=$(".mainvisual .visual li").length;
 
     if(nextText==TextCount){ //마지막이미지일때 다시 첫번째 이미지로
       nextText=0;
 
     }
 
-    $(".mainvisual2 .visual2 li .Vtext").eq(showText).removeClass("textVisible"); //(기존)이미지 효과준 클래스 제거
-    $(".mainvisual2 .visual2 li .Vtext").eq(nextText).addClass("textVisible"); //이미지효과준 클래스 생성(새로 나타나는 이미지)
-    $(".mainvisual3 .btn>span").eq(showText).removeClass("active");
+    $(".mainvisual .visual li .Vtext").eq(showText).removeClass("textVisible"); //(기존)이미지 효과준 클래스 제거
+    $(".mainvisual .visual li .Vtext").eq(nextText).addClass("textVisible"); //이미지효과준 클래스 생성(새로 나타나는 이미지)
+    $(".mainvisual .btn>span").eq(showText).removeClass("active");
 
-    $(".mainvisual3 .btn>span").eq(nextText).addClass("active"); //선택된 버튼
+    $(".mainvisual .btn>span").eq(nextText).addClass("active"); //선택된 버튼
 
     showText=nextText;
-
   }
-
+  
   timer2=setInterval(changeText,5000);
 
 
 
-   /* stop/play */
+
+
+
+
+  /* stop/play*/
    $(".play").hide();
+   
 
    $(".stop").click(function(){
      clearInterval(timer1);
@@ -75,6 +81,10 @@ $(document).ready(function(){
      $(".play").hide();
      $(".stop").show();
    });
+
+
+
+ 
  
  
 
@@ -84,14 +94,14 @@ $(document).ready(function(){
 
   //상단 버튼 클릭시.. 
 
-  $(".mainvisual3 .btn>span").click(function(){
+  $(".mainvisual .btn>span").click(function(){
 
     clearInterval(timer1);  //버튼클리시 자동함수 해지
     clearInterval(timer2);
-
     //상단버튼 클릭시 stop/play
     $(".play").hide();
     $(".stop").show();
+
 
 
     nextImg=$(this).index();  //버튼클릭시 인덱스필요하다 너무많이 말한거 
@@ -106,20 +116,19 @@ $(document).ready(function(){
 
 
 
-  //상단 버튼 클릭시.. 이미지동작-아직 함수내부에 이어지는중임!
+              //상단 버튼 클릭시.. 이미지동작-아직 함수내부에 이어지는중임!
     $(".mainvisual .visual li").eq(showImg).removeClass("imgVisible"); 
     $(".mainvisual .visual li").eq(nextImg).addClass("imgVisible"); 
-    $(".mainvisual3 .btn>span").eq(showImg).removeClass("active");
-    $(".mainvisual3 .btn>span").eq(nextImg).addClass("active"); 
+    $(".mainvisual .btn>span").eq(showImg).removeClass("active");
+    $(".mainvisual .btn>span").eq(nextImg).addClass("active"); 
     showImg=nextImg;
-  
 
 
-    //상단 버튼 클릭시.. 텍스트동작-아직 함수내부에 이어지는중임!
-    $(".mainvisual2 .visual2 li .Vtext").eq(showText).removeClass("textVisible"); 
-    $(".mainvisual2 .visual2 li .Vtext").eq(nextText).addClass("textVisible"); 
-    $(".mainvisual3 .btn>span").eq(showText).removeClass("active");
-    $(".mainvisual3 .btn>span").eq(nextText).addClass("active"); 
+            //상단 버튼 클릭시.. 텍스트동작-아직 함수내부에 이어지는중임!
+    $(".mainvisual .visual li .Vtext").eq(showText).removeClass("textVisible"); 
+    $(".mainvisual .visual li .Vtext").eq(nextText).addClass("textVisible"); 
+    $(".mainvisual .btn>span").eq(showText).removeClass("active");
+    $(".mainvisual .btn>span").eq(nextText).addClass("active"); 
     showText=nextText;
 
     
@@ -134,13 +143,30 @@ $(document).ready(function(){
 
   })
 
+    
+
 
 /* 햄버거메뉴토글 */
     $(".menu_toggle_btn").click(function(){
       $(this).toggleClass("menu-open");
       $(".topBox3").slideToggle("fast");
-    })
+
+      $(".slideControl").toggleClass("testtest");
+
+      
+
+    });
   
+
+
+
+
+
+
+
+
+
+    
     
   
   

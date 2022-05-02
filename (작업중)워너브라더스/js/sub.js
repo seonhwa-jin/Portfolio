@@ -1,3 +1,22 @@
+//html에서 onload로 불러들이는 함수생성
+function openIntroPage(){
+
+  
+  $(".games_menu_left").stop().animate({height:"100%"},500);
+  $(".menu_left_content").stop().animate({height:"100%"},500);
+  $(".games_menu_right").stop().animate({height:"100%"},500);
+  $(".menu_right_content").stop().animate({height:"100%"},500);
+  /* $(".menu .menu_list:nth-child(1)").delay(200).animate({right:"30%"});
+  $(".menu .menu_list:nth-child(2)").delay(200).animate({right:"30%"}); */
+  
+}
+
+
+
+
+
+
+
 $(document).ready(function(){
 
   /* /////////////////1.Movies/////////////////// */
@@ -81,7 +100,7 @@ $(document).ready(function(){
 
     $(".movieVisual img").attr("src",$(this).find(">a img").attr("src"));
     $(".bb1 img").attr("src",$(this).find(">a img").attr("src"));
-    $(".panel>li").hide(); //기존의 보여진 내용 숨기기
+    $(".panel>li").hide();
     $($(this).find("a").attr("href")).fadeIn("slow");
     return false;
     
@@ -133,7 +152,7 @@ $(document).ready(function(){
 
 
 
-   /* /////////////6.additional///////////////////// */
+   /* /////////////2.TV show///////////////////// */
    /* 탭메뉴 클릭_____________________________*/
 
   /* 탭메뉴 클릭_____________________________*/
@@ -229,32 +248,99 @@ $(document).ready(function(){
 
 
 
-  
 
-  
 
+
+
+
+  ///////////////////////////////3-1.Video Games 슬라이드배너
+
+  //다음보기
+
+  $(".vgBan_btn .vgBan_right").click(function(){
+
+    $(".vgBan ul").stop(true,true).animate({marginLeft:"-=255px"},1000,function(){
+      $(".vgBan ul li:first-child").appendTo(".vgBan ul");
+      $(this).css({marginLeft:"0px"}); 
+    });
+    return false;
+
+  });
+
+
+
+
+
+
+
+
+  //이전보기
+
+  $(".vgBan_btn .vgBan_left").click(function(){
+
+    $(".vgBan ul").stop(true,true).animate({marginLeft:"+=255px"},1000,function(){
+      $(".vgBan ul li:last-child").prependTo(".vgBan ul");
+      $(this).css({marginLeft:"0px"}); 
+      return false;
+    });
     
-    
-    
+  })
 
-    
+
+
+
+
+  //슬라이드배너로 탭메뉴 조정
   
+  $(".vgPanel>li:not(:first)").hide();
 
-  
-
-
-
-
-  
-
-
-
+  $(".vgTab>li").click(function(){
+		
+		$(".vgPanel>li").hide();
+		$($(this).find("a").attr("href")).fadeIn("slow");
+    return false;
+	});
 
 
+ 
 
 
 
-    
+
+   //////////3-1.Video Games 4개의사진
+
+  $(".vgImg").click(function(){
+      $(this).animate({width:"100%",height:"100%",opacity:"100%"},200);
+      $(this).addClass("vgImgClick");
+      $(".vgImg").find("img").animate({opacity:"100%"},200);
+      $(".xBtn").css({display:"block"});
+      
+  });
+  $(".xBtn").click(function(){
+    $(".vgImg").animate({width:"50%",height:"50%"},200);
+    $(".vgImg").removeClass("vgImgClick");
+    $(".vgImg").find("img").animate({opacity:"30%"},200);
+    $(".xBtn").css({display:"none"});
+  })  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	});
 
