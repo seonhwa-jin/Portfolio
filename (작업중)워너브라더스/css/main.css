@@ -1,4 +1,5 @@
 @import url(common.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;0,900;1,700;1,900&display=swap');
 
 
 /*TOP*/
@@ -86,6 +87,7 @@
 
 
 
+
 /* 내려오는 메인메뉴 검정박스 */
 .topBox3{   
   display:none;
@@ -93,7 +95,8 @@
 	height:100vh;
 	background:rgba(27, 27, 27, 0.95);
 	position:absolute;
-	top:0;	
+	top:0;
+  z-index: 4000;	
 }
 
 .topBox3 ul{
@@ -110,6 +113,7 @@
 
 
 
+/* ----------------------------- 여기까진 건들것  x ----------- */
 
 
 
@@ -126,29 +130,30 @@
 /*///// 비주얼 이미지(FullScreen) /////*/
 
 .mainvisual{
-    position:fixed;
-    width:100%;
-    height:100vh;
-    top:0;
-    left:0;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
 }
 
-.mainvisual .visual li{   
-    opacity:0;
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:no-repeat fixed center center;
-    background-size:cover;
-    transform:scale(1.2);
-    transition:all 1.5s;
+.mainvisual .visual li{   /*시작위치의 이미지->크기가 120%*/
+  opacity:0;
+  position:absolute;
+  top:0;
+  left:0;
+  /* z-index:999;  */ /*겹쳐서 글자가 선택이 안되는것을 해결하기 위해 ~~~*/
+  width:100%;
+  height:100%;
+  background:no-repeat fixed center center;
+  background-size:cover;
+  transform:scale(1.2);
+  transition:all 1.5s;
 }
-.mainvisual .visual li.imgVisible{ 
-    opacity:1;
-    z-index:1000; 
-    transform:scale(1);
+.mainvisual .visual li.imgVisible{   /*->jQuery 에서 불러냄*/
+  opacity:1;
+  z-index:800; 
+  transform:scale(1);
 }
 
 /* 비주얼이미지배경 */
@@ -160,124 +165,26 @@
 .mainvisual .visual li.main5{background-image:url(../image/movie5.jpg);}
 .mainvisual .visual li.main6{background-image:url(../image/movie6.jpg);}
 .mainvisual .visual li.main7{background-image:url(../image/game0.jpg);}
-.mainvisual .visual li.main8{background-image:url(../image/game1.jpg);}
+.mainvisual .visual li.main8{background-image:url(../image/game4.jpg);}
 .mainvisual .visual li.main9{background-image:url(../image/game2.png);}
 .mainvisual .visual li.main10{background-image:url(../image/movie7.jpg);}
 .mainvisual .visual li.main11{background-image:url(../image/movie81.jpg);}
 
-/*////// 비주얼 텍스트 공통 /////*/
-.mainvisual2{
-  width:1200px;
-  margin: 0 auto;
-}
-.mainvisual2 .Vtext{ 
-  opacity:0;
-  position:absolute;
-  top:20%; 
-  /* width:100%; */
-  color:#fff;
-  /* text-align:center; */
-  transform:translateY(20%) scale(1.2);
-  transition:all 1s;
-}
-.mainvisual2 .Vtext .black1{color:#575757;}
-.mainvisual2 .Vtext .black2{color:#000;text-shadow:none;}
-
-.mainvisual2 .Vtext.textVisible{ 
-  opacity:1;
-  transform:translateY(0) scale(1);
-}
-.mainvisual2 .Vtext h3{
-  margin-bottom:30px;
-  font-family: 'Libre Bodoni', serif;
-  font-weight:900;
-  font-size:70px;
-  letter-spacing:5px;
-  font-style: italic;
-  text-shadow: 0px 3px 0px #777777,
-                 0px 9px 10px rgba(0,0,0,0.15),
-                 0px 19px 2px rgba(0,0,0,0.1),
-                 0px 29px 30px rgba(0,0,0,0.1);
-}
-.mainvisual2 .Vtext h4{ /* 비쥬얼 서브제목 */
-  margin-bottom:30px;
-  font-family: 'Libre Bodoni', serif;
-  font-weight:700;
-  font-size:30px;
-  /* letter-spacing:5px; */
-  text-shadow: 0px 3px 0px #777777,
-                 0px 9px 10px rgba(0,0,0,0.15),
-                 0px 19px 2px rgba(0,0,0,0.1),
-                 0px 29px 30px rgba(0,0,0,0.1);
-}
-
-.mainvisual2 .Vtext p{
-  font-weight:100;
-  font-size:16px;
-  line-height:30px;
-  text-shadow:0 0 10px #000;
-} 
-.mainvisual2 .Vtext .more{
-  width:100px;
-  height:30px;
-  border:1px solid #fff;
-  color:#fff;
-  font-size:13px;
-  margin-top:20px;
-  transition:all 2s;
-  text-align:center;
-  /* position: absolute;
-  z-index: 100; */
-}
-.mainvisual2 .Vtext .more:hover{background:rgba(0,0,0,0.7);}
-.mainvisual2 .Vtext .more a{display:block;}
-
-
-
-
-
-
-
-
-
-
-/*///////////버튼//////////////*/
-.mainvisual3{
-  width:1200px;
-  margin: 0 auto;
+/*버튼*/
+.btn_in{
   position: relative;
+  width: 1200px; 
+  margin: 0 auto; 
+  
 }
-
-
-.mainvisual3 .playstop .stop { /* stop */
-	position: absolute;
-  top:130px;
-  left:10px;
-	width: 8px;
-	height: 11px;
-	background: url(../image/btn_pause.png) no-repeat;
-}
-
-.mainvisual3 .playstop .play { /* play */
-	position: absolute;
-	top:130px;
-  left:10px;
-	width: 8px;
-	height: 11px;
-	background: url(../image/btn_play.png) no-repeat;
-}
-
-
-
-
-.mainvisual3 .btn{ /* 롤링동그라미 */
-    position:absolute;
+.mainvisual .btn{
+  position:absolute;
     top:130px;
     left:30px;
-   
+  z-index:2000;
 }
-.mainvisual3 .btn>span{
-    display:inline-block;
+.mainvisual .btn>span{
+  display:inline-block;
     width:11px;
     height:11px;
     margin-right:3px;
@@ -286,14 +193,105 @@
     transition:all 1.2s;
     border-radius: 10px;
 }
-.mainvisual3 .btn>span.active{
-    display:inline-block;
-    width:45px;
-    height:11px;
-    background:rgba(213, 213, 214, 0.737);
+.mainvisual .btn>span.active{
+  display:inline-block;
+  width:45px;
+  height:11px;
+  background:rgba(132, 213, 255,0.494);
 }
 
 
+.slideControl{
+  width: 1200px;
+  margin: 0 auto;
+  height: 13px;
+  /* background-color: rgba(255, 166, 0, 0.163); */
+  position: relative;
+  transition: all 0.3s;
+  
+}
+.testtest{display: none;}
+
+
+.playstop{
+  position: absolute;
+  top:130px;
+  left:10px;
+  z-index: 1500;
+}
+
+ .stop { /* stop */
+	position: fixed;
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_pause.png) no-repeat;
+}
+
+.play { /* play */
+	position: fixed;
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_play.png) no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*////// 비주얼 텍스트 공통 /////*/
+
+.mainvisual .Vtext{ 
+  opacity:0;
+  /* background-color: rgba(0, 0, 255, 0.132); */
+
+  width: 1200px;
+  margin: 30vh auto;
+  
+  color:#fff;
+  
+  transform:translateY(20%);
+  transition:all 1s;
+}
+.mainvisual .Vtext .black1{color:#575757;}
+.mainvisual .Vtext .black2{color:#000;text-shadow:none;}
+
+.mainvisual .Vtext.textVisible{ /*->jQuery 에서 불러냄*/
+  opacity:1;
+  transform:translateY(0);
+}
+.mainvisual .Vtext h3{
+  margin-bottom:30px;
+  font-family:'Nanum Myeongjo', serif;
+  font-weight:700;
+  font-size:60px;
+  font-style: italic;
+  text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+}
+
+.mainvisual .Vtext p{
+  font-weight:100;
+  font-size:16px;
+  line-height:30px;
+  text-shadow:0 0 10px #000;
+} 
+.mainvisual .Vtext .more{
+  width:100px;
+  height:30px;
+  border:1px solid #fff;
+  color:#fff;
+  font-size:13px;
+  margin-top:40px;
+  text-align: center;
+  transition:all 2s;
+}
+.mainvisual .Vtext .more:hover{background:rgba(0,0,0,0.7);}
+.mainvisual .Vtext .more a{display:block;}
 
 
 
@@ -400,3 +398,15 @@ footer{
 .f5:hover{background:url(../image/snss5.png) no-repeat center center;background-size: cover;}
 
 .copyright{margin-left: 5px;}
+
+
+
+
+
+
+
+
+
+
+
+

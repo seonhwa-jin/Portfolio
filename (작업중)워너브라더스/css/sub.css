@@ -1,5 +1,5 @@
 @import url(common.css);
-@import url(sub_common.css);
+@import url(header_footer.css);
 @import url('https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
@@ -35,22 +35,22 @@ font-family: 'Bebas Neue', cursive;
 
 
 
-.bb1{
+.bb1{ 
   position: absolute;
   top:0;
   width: 100%;
-  height: 650px;
+  height: 725px;
  /*  background-color: gold; */
   overflow: hidden;
 }
 
 .bb1 img{
-  width: 120%;
-  height: 700px;
-/*   transform: scale(1.2); */
-  filter: blur(10px) brightness(20%);
+  width: 100%;
+  height: 100%;
+  filter: blur(10px) brightness(40%);
+  transform: scale(1.5);
   
-  /* background-color: rgb(35, 35, 35); <----원래 검정배경*/
+
   /* background-size:cover; */
  
 }
@@ -120,11 +120,13 @@ font-family: 'Bebas Neue', cursive;
 	width:150px;  
 	height:75px;
   position: relative;
+  overflow: hidden;
 }
 .banner ul li img{
   width:100%;
   height: 100%;
   filter: blur(2px) brightness(50%);
+  transform: scale(1.05);
   position: absolute;
   
 }
@@ -330,31 +332,24 @@ font-family: 'Bebas Neue', cursive;
 
 
 /* ////////////////////////////////////////////////////////////////////////////////////////// */
-/* *--------------2-1 TV New(였는데 additional로 바꾸고 2-1은 위에 따로 갈아엎을거-------------------- */
+/* *--------------2.TV Shows-------------------- */
 
 
 
-#tabmenu h3{
-text-align:center;
-font-size:18px;
-margin:0 auto;
-padding-top:60px;
-padding-bottom:50px;
-color:#a57e41;
-font-weight:400;
-}
+
 #tabmenu{
 width:1200px;
 margin:0px auto;
 text-align:center;
 position: relative;
+cursor: pointer;
 }
 
 #tabmenu .blackTitle{
   width: 300px;
   height: 60px;
   line-height: 60px;
-  background: rgb(10, 10, 10);
+  background: rgba(10, 10, 10, 0.791);
   color:whitesmoke;
   font-size: 30px;
   position: absolute;
@@ -472,4 +467,374 @@ color:#fff;
   font-size:16px;
   letter-spacing:3px;
 }
+
+
+
+
+
+
+
+
+/* ///////////////////////3. Games//////////////////////// */
+
+
+
+
+
+.games_menu_left{/*왼쪽 영역__________*/
+  width:50%;
+  height:0;
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index:800;
+  background:url(../image/games_bg1.png) no-repeat center center ;
+  background-size: cover;
+  display:flex;
+	justify-content:center; 
+	align-items:center; 
+}
+
+.games_menu_left .menu_left_content{
+  width:50%;
+  height:0;
+  position:fixed;
+  left:0;
+  bottom:0;
+  z-index:802;
+  background:url(../image/games_model1.png) no-repeat center center ;
+  background-size: cover;
+  display:flex;
+	justify-content:center; 
+	align-items:center; 
+  transition: all 0.3s;
+}
+
+.menu_left_content:hover{
+  transform: scale(1.1);
+}
+
+.menu_left_content a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+.games_menu_right{/*오른쪽 영역__________*/
+  width:50%;
+  height:0;
+  position:fixed;
+  right:0;
+  top:0;
+  z-index:800;
+  background:url(../image/games_bg2.png) no-repeat center center ;
+  background-size: cover; 
+  
+
+}
+.games_menu_right .menu_right_content{
+	width:50%;
+	height:0;
+  position:fixed;
+  left:50%;
+  top:0;
+  z-index:802;
+  background:url(../image/games_model2.png) no-repeat center center ;
+  background-size: cover;
+  display:flex;
+	justify-content:center; 
+	align-items:center;
+	transition: all 0.3s;
+}
+
+.menu_right_content:hover{
+  transform: scale(1.1);
+}
+
+.menu_right_content a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+/*2분할 뒤 WB로고*/
+
+#games_bg{ /*모든 모니터 해상도에 텍스트 수평수직 정가운데정렬*/		
+  position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction: column;
+	/* justify-content:center; */
+  align-items:center; /*주축이 바뀌었음*/
+}
+
+#games_bg img{
+  width: 300px;
+  height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+/* ///////////////////3-1. Video games//////////////////////// */
+
+section{
+  width: 100%;
+  background-color: rgb(247, 247, 247);
+}
+
+.vg_section_in{
+  width:1200px;
+  margin: 0 auto;
+  /* background-color: rgb(235, 223, 154); */
+}
+
+.backBtnSpace{
+  width: 1200px;
+  height:140px;
+  margin: 0 auto;
+  /* background-color: rgb(236, 213, 83); */
+  position: relative;
+
+}
+
+.backBtn{
+  width: 45px;
+  height: 45px;
+  background:url(../image/back.png) no-repeat center center ;
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  margin-left: 20px;
+  transition: all 0.2s;
+}
+
+.backBtn:hover{
+  background:url(../image/backhover.png) no-repeat center center ;
+}
+
+.backBtn a{
+  display: block;
+  width: 45px;
+  height: 45px;
+}
+
+
+
+.videoGames{
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  font-size: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  margin-right: 45px;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* video Games 내용  */
+
+.vgBox{
+  width: 1200px;
+  height: 700px;
+ /*  background-color: #f8c5f0; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+  justify-content: center;
+}
+
+.vgBox1{
+  width: 40%;
+  height: 90%;
+  /* background-color: beige; */
+  margin: 20px;
+}
+
+.vgBox1a{
+  width: 100%;
+  height:100%;
+  background-color: rgb(250, 180, 133);
+  /* : 5px; */
+}
+
+
+
+
+
+.vgBox2{
+  width: 565px;
+  height: 100%;
+  margin: 20px 0 20px 20px;
+}
+
+
+.vgBox2a{
+  width: 565px;
+  height: 317px;
+  /* background-color: rgb(185, 235, 167); */
+  
+}
+
+
+
+
+.vgBox2b{
+  width: 100%;
+  height: 315px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  
+
+} 
+.vgImg{ /* 제이쿼리로 이거늘려야함 */
+  width: 50%;
+  height: 50%;
+  background-color: rgb(1, 1, 1);
+  
+}
+
+.vgImgClick{ 
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index:120;
+}
+
+
+
+.vgImg img{
+  width: 100%;
+  height: 100%;
+  opacity: 30%;
+}
+
+
+
+
+
+
+.xBtn{
+  position: absolute;
+  z-index: 150;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  display: none;
+}
+
+
+
+
+
+/*3-1슬라이드배너 */
+.vgBox3{
+  width:100%;
+  /* background-color: rgb(203, 133, 250);  */
+  margin-bottom: 20px;
+}
+
+
+.vgBanner{  /*배너전체영역*/
+	position:relative;
+	width:100%;
+	height:100%;
+	/*background:yellow;*/	 
+}
+
+.vgBanner .vgBan{   /*슬라이드영역*/
+	width:100%; 
+	height:100%;
+	overflow:hidden;
+	/*background:orange;	*/ 
+}
+
+.vgBanner .vgBan ul{
+	width:1785px;  /* 총길이=230*18+여백포함 */
+	position:relative;
+	left:-255px;  
+	
+}
+.vgBanner .vgBan ul li{
+	float:left;
+	margin-right:25px;
+	width:230px;   
+	height:111px;  
+}
+.vgBanner .vgBan ul li img{
+  width: 100%;
+  height: 100%;
+  filter: brightness(60%);
+  transition: all 0.3s;
+}
+.vgBanner .vgBan ul li:hover img{
+  width: 100%;
+  height: 100%;
+  filter: brightness(100%);
+}
+
+
+
+
+/*좌우버튼*/
+.vgBan_left{
+	position:absolute;
+	
+	left:5px;
+	cursor:pointer;
+}
+.vgBan_right{
+	position:absolute;
+
+	right:5px;
+	cursor:pointer;
+}
+.vgBan_btn span{
+  position: absolute;
+  top:40%;
+	display:inline-block;
+	width:17px;
+	height:27px;	
+}
+.vgBan_btn .vgBan_left{background:url(../image/main-event-left_02.png) no-repeat;}
+.vgBan_btn .vgBan_right{background:url(../image/main-event-right_02.png) no-repeat;}
+.vgBan_btn .vgBan_left:hover{background:url(../image/main-event-left_01.png) no-repeat;}
+.vgBan_btn .vgBan_right:hover{background:url(../image/main-event-right_01.png) no-repeat;}
+
+
 
