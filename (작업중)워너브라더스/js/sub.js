@@ -80,13 +80,7 @@ $(document).ready(function(){
 
   });
 
-  
-  //mouse hover - stop slide
-  $(".ban").hover(function(){ 
-		clearInterval(bauto);  
-	}, function(){
-		bauto=setInterval(bannerAuto,4000);
-	});
+
 
 
 
@@ -103,18 +97,11 @@ $(document).ready(function(){
     $(".panel>li").hide();
     $($(this).find("a").attr("href")).fadeIn("slow");
     return false;
-    
-    
 
-    
   });
 
 
 
-
-
-
-  
 
 
 
@@ -330,10 +317,69 @@ $(document).ready(function(){
 
 
 
+  ////////4.brand
+  $("dd:not(:first)").css("display","none");
+  
+	$("dt:first").addClass("brSelected");
+
+ 
+
+
+  $("dl dt").click(function(){
+    
+    $("dl dt").find("+dd").stop().hide("slow"); //슬라이드업다운은 세로가예쁨 
+    $(this).find("+dd").stop().show("slow");
+    $("dt").removeClass("brSelected");
+    $(this).addClass("brSelected"); 
+
+  });
+
+  
+
+  //탭메뉴 dt를 클릭시 바뀌는 dl의 전체배경이미지
+  $("dl .brTab1").click(function(){
+		$("dl").css({"background":"url(image/brbg1.jpg) no-repeat center top","transition":"all 1s"});
+    $(".brFullBg").find("img").attr("src","image/brbg1.jpg");
+	});
+  $("dl .brTab2").click(function(){
+		$("dl").css({"background":"url(image/brbg2.jpg) no-repeat center top","transition":"all 1s"});
+    $(".brFullBg").find("img").attr("src","image/brbg2.jpg");
+	});
+	$("dl .brTab3").click(function(){
+		$("dl").css({"background":"url(image/brbg3.jpg) no-repeat center top","transition":"all 1s"});
+    $(".brFullBg").find("img").attr("src","image/brbg3.jpg");
+	});
+	$("dl .brTab4").click(function(){
+		$("dl").css({"background":"url(image/brbg4.jpg) no-repeat center top","transition":"all 1s"});
+    $(".brFullBg").find("img").attr("src","image/brbg4.jpg");
+	});
+	$("dl .brTab5").click(function(){
+		$("dl").css({"background":"url(image/brbg5.jpg) no-repeat center top","transition":"all 1s"});
+    $(".brFullBg").find("img").attr("src","image/brbg5.jpg");
+	});
+  $("dl .brTab6").click(function(){
+		$("dl").css({"background":"url(image/brbg6.jpg) no-repeat center top","transition":"all 1s"});
+    $(".brFullBg").find("img").attr("src","image/brbg6.jpg");
+	});
+  $("dl .brTab7").click(function(){
+		$("dl").css({"background":"url(image/brbg7.jpg) no-repeat center top","transition":"all 1s"});
+    $(".brFullBg").find("img").attr("src","image/brbg7.jpg");
+	});
+  $("dl .brTab8").click(function(){
+		$("dl").css({"background":"url(image/brbg9.jpg) no-repeat center top","transition":"all 1s"});
+    $(".brFullBg").find("img").attr("src","image/brbg9.jpg");
+	});
 
 
 
 
+
+
+
+
+  //5.experience
+
+  
 
 
 
