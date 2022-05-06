@@ -9,6 +9,7 @@
 }
 .topBar{
   position:fixed;
+  top:0;
 	width:100%;
   height:60px;
 	/* background:rgba(255,255,255,0.7); */
@@ -99,17 +100,41 @@
   z-index: 4000;	
 }
 
-.topBox3 ul{
-	padding-top:200px;
+.topBox3>ul{
+	padding-top:180px;
 }
 
-.topBox3 ul li{
+.topBox3>ul>li{
   text-align:center;
-	color:#fff;
+	color:rgb(211, 211, 211);
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: 80px; 
+  transition: all 0.2s;
 }
 
+
+.topBox3>ul>li a:hover{color:gold;}
+
+.topBox3>ul>li:nth-child(4){margin-top: 40px;}
+
+
+
+
+.topBox3 .topBox3Sub{
+  opacity: 0;
+  transition: all 0.3s;
+  
+}
+
+.topBox3 ul li:hover .topBox3Sub{
+  opacity: 1;
+}
+
+
+.topBox3 .topBox3Sub li{
+  margin-top: 20px;
+  font-size: 15px;
+}
 
 
 
@@ -215,7 +240,7 @@
 
 .playstop{
   position: absolute;
-  top:130px;
+  top:114px;
   left:10px;
   z-index: 1500;
 }

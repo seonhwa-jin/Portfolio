@@ -1,0 +1,67 @@
+@import url(common.css);
+
+header dl{  /*1번째 배경이미지->나머지는 jquery에서 불러냄*/
+	width:1100px;
+	height:400px;
+	margin:0 auto;
+    background:url(../image/ban_img1.jpg) no-repeat center top;
+    overflow:hidden;
+}
+header dl dt{  /*탭부분*/
+	position:relative;
+	width:60px;
+	height:400px;
+    background:rgba(51,102,204,0.6);
+    border-right:1px solid rgba(2555,255,255,0.6);
+    float:left;
+    box-sizing:border-box;
+    cursor:pointer;
+    padding-left:25px;
+}
+header dl dt a{  
+    position:absolute;
+    top:30px;
+    color:#ccc;
+    font-size:15px;
+    padding-top:15px;
+    font-weight:normal;
+}
+dt.tex3Selected a{  /*제목선택시->jquery에서 불러냄*/
+	cursor:default;
+	color:#fff;
+}
+
+
+header dl dd{   /*각 탭의 내용*/
+	width:800px;
+    height:500px;
+	display:none;
+    float:left;
+    position:relative;
+    overflow:auto;
+    /*background:pink;*/
+}
+header dl dd:first-of-type{display:block;}
+
+.tex3Content{padding:30px;}
+.tex3Content .title{
+    font-size:42px;
+    font-weight:normal;
+    text-transform:uppercase;
+    margin-bottom:25px;
+    color:#fff;
+}
+.tex3Content .description {
+    color:#fff;
+    font-size:12px;
+    line-height:20px;
+}
+.tex3Content .read-more{
+    font-size:14px;
+    text-transform:uppercase;
+    display:inline-block;
+    padding:8px 16px;
+    margin-top:20px;
+    border:1px solid rgba(2555,255,255,0.6);
+}
+.tex3Content .read-more a{color:#fff;}
