@@ -21,6 +21,13 @@ font-family: 'Bebas Neue', cursive;
 
 
 
+
+.fixed_footer{ /* 푸터를 고정*/
+  position: relative;
+  z-index: 1000;
+}
+
+
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* *--------------1.Movies-------------------- */
 /* 섹션 */
@@ -841,6 +848,7 @@ section{
   right: 0;
   margin: 5px;
   display: none;
+  cursor: pointer;
 }
 
 
@@ -1160,37 +1168,295 @@ dt.brSelected a{  /*제목선택시->jquery에서 불러냄*/
 
 
 
+
+
+
+
 /* /////////////////////5-1 studio Tour/////////////// */
 
-.tour_section_in{
-  width: 1200px;
-  height: 100vh; /* ------나중에지울것 */
-  margin: 0 auto;
-  background-color: crimson;
-}
 
-
-.tour_side ul{ 
-  width: 3vw;
-  height: 100vh;
-  background-color: gold;
-  position: fixed;
-  z-index: 900;
-}
-.tour_side ul li{
+#tour{
+  /* position: relative; */
   width: 100%;
-  height: 33.3%;
-  background-color: rgb(102, 125, 253);
-} 
+}
 
-.tour_side ul li img{
+
+.tour_content{
+  width:1200px;
+  margin: 0 auto;
+  z-index: 400;
+  background-color: #4ebed4;
+  position: relative;
+}
+
+.tour_3btn{
+  
+  width: 120px;
+  height: 35px;
+  background-color: rgb(207, 221, 107);
+  border-radius: 20px;
+  text-align: center;
+  line-height: 35px;
+  transition: all 0.2s;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tour_3btn:hover{
+  background-color: rgb(255, 200, 0);
+  width: 200px;
+  
+}
+
+.btn3_1{
+  position: absolute;
+  top:73vh;
+  right: 0;
+}
+.btn3_2{
+  position: absolute;
+  top:78vh;
+  right: 0;
+}
+.btn3_3{
+  position: absolute;
+  top:83vh;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* hollywood------------ */
+.tour_visual_in{
+  width: 100%;
+  height: 70vh;
+  background-color: rgb(9, 9, 9);
+  position: relative; 
+}
+
+.tour_changeimg ul li{ 
+	display:none;  
+	position:absolute;
+	top:0;
+	left:0;
+  width: 100%;
+  height: 100%;
+}
+.tour_changeimg ul li:first-child{display:block;} 
+
+.tour_changeimg ul li img{
+  width:auto; 
+  height: 70vh;
+  filter: brightness(80%);
+}
+
+
+
+/*하단버튼*/
+.tour_visual .tour_list_btn{ 
+	position:absolute;
+	top:67vh; 
+	left:48%; 
+}
+
+.tour_visual .tour_list_btn ul li{  /* . . . 버튼 */
+	float:left;
+	width:8px; 
+	height:8px; 
+	border-radius:50%; 
+	background:rgba(255, 255, 255, 0.426);
+	margin:0 5px;
+	cursor:pointer;
+  transition: all 0.1s;
+}
+.tour_visual .tour_list_btn ul li.tour_active{background:#ffc80077;} 
+.tour_visual .tour_list_btn ul li img{width: 100%; height: 100%;}
+
+/*좌우버튼*/
+.tour_visual .tour_lbtn{  /* 이전버튼 */
+	position:absolute;
+	top:35vh;
+	left:20%;
+	width:65px;
+	height:65px;
+	background:url(../image/lbtn_off.png) no-repeat;
+  transition: all 0.2s;
+}
+.tour_visual .tour_lbtn:hover{background:url(../image/lbtn_on.png) no-repeat;}
+
+
+.tour_visual .tour_rbtn{  /* 다음버튼 */
+	position:absolute;
+	top:35vh;
+	right:20%;
+	width:65px;
+	height:65px;
+	background:url(../image/rbtn_off.png) no-repeat;
+  transition: all 0.2s;
+}
+.tour_visual .tour_rbtn:hover{background:url(../image/rbtn_on.png) no-repeat;}
+
+
+
+
+
+/* hollywood content */
+.tour_title {
+  width: 1200px;
+  height: 28vh;
+  margin: 2vh auto;
+  text-align: center;
+}
+
+
+.tour_title h1{
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 40px;
+}
+
+.tour_title h2{
+  font-size: 45px;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 60px;
+}
+
+
+
+
+
+.tour_box1{
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap:wrap;
+}
+
+
+.tour_box1_img{
+  width: 800px;
+  height: 150px;
+}
+.tour_box1_img img{
+  width: 100%;
+  height: 100%;
+}
+
+.tour_box1_space{
+  width:400px;
+  height: 110px;
+  background-color:transparent;
+  border-bottom: 2px solid rgb(167, 167, 167);
+  box-sizing: border-box;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  position:relative;
+}
+
+.tour_box1_space span{
+  position: absolute;
+  bottom: 5px;
+  right:0;
+}
+
+
+
+.tour_box1_txt{
+  width:1200px;
+  background-color: transparent;
+  margin: 40px 0 120px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.tour_box1_txt p{
+  margin-bottom: 25px;
+}
+
+.tour_box1_txt_1{
+  font-weight: bold;
+  font-size: 21px;
+  color:#826b51;
+}
+.tour_time{
+  color:#5e5a37; 
+  font-weight: bold;
+  background-color: rgba(185, 185, 185, 0.144);
+  margin-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.tour_box2{
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap:wrap;
+}
+
+
+.tour_box2_img{
+  width: 800px;
+  height: 150px;
+}
+.tour_box2_img img{
   width: 100%;
   height: 100%;
 }
 
 
-
-#tour_footer{ /* 여기푸터만 위로띄움 */
-  position: relative;
-  z-index: 1000;
+.tour_box2_space{
+  width:400px;
+  height: 110px;
+  background-color:transparent;
+  border-bottom: 2px solid rgb(167, 167, 167);
+  box-sizing: border-box;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  position:relative;
 }
+
+.tour_box2_space span{
+  position: absolute;
+  bottom: 5px;
+  left:0;
+}
+
+
+
+.tour_box2_txt{
+  width:1200px;
+  background-color: transparent;
+  margin: 40px 0 120px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.tour_box2_txt p{
+  margin-bottom: 25px;
+}
+
+
+
+
