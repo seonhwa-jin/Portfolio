@@ -379,16 +379,114 @@ $(document).ready(function(){
 
   //5.experience
 
-  
+  //hollywood, london, tokyo 교체
+  $(".tour_panel>li:not(:first)").hide();
+
+  $(".tour_content>li").click(function(){
+    $(".tour_panel>li").hide();//기존의 보여진 내용 숨기기
+    $($(this).find("a").attr("href")).show();//새로 선택된 내용 href 연결된내용 보여주기
+  });
+
+
+
+
+  	/* 경로들을 다 변수에 할당 */
+	let t_img=$(".tour_changeimg ul li");	
+	let t_btn=$(".tour_list_btn ul li");
+	let t_lbtn=$(".tour_side_btn .tour_lbtn");
+	let t_rbtn=$(".tour_side_btn .tour_rbtn");
+
+
+	/* 동작에 관련된 변수들  */
+	let t_oldidx=0;  //기존이미지
+	let t_idx=0;   //새로 바뀌는 이미지
+	let t_img_n=t_img.length; 
+	
+
+
+	/* 이미지와 버튼이 바뀌는 함수 */
+	function t_changeImg(t_idx){  
+
+		if(t_oldidx!=t_idx){ 
+
+			
+			/* 검은버튼, 주황버튼 컨트롤 */
+			t_btn.eq(t_oldidx).removeClass("tour_active"); 
+			t_btn.eq(t_idx).addClass("tour_active");
+
+			/* 기존이미지, 선택된 이미지 컨트롤 */
+			t_img.eq(t_oldidx).stop(true,true).fadeOut(300);
+			t_img.eq(t_idx).stop(true,true).fadeIn(300); 
+
+			/* 선택한 새 이미지 - > 기존 이미지로! */
+			t_oldidx=t_idx; 	
+		}
+	}
+
+
+
+	/* 자동함수 생성 */
+	function t_changeAuto(){
+			t_idx++;
+
+
+			/*선택한 이미지가 마지막일때 다시 처음 이미지부터 시작*/
+			if(t_idx>t_img_n-1){ 
+				t_idx=0;
+			}
+			t_changeImg(t_idx); 
+	}
+
+		t_timer=setInterval(t_changeAuto,7000); 
 
 
 
 
 
+		//하단버튼 클릭시.....
+		t_btn.click(function(){
 
-
-
+		clearInterval(t_timer);
+		t_idx=$(this).index(); 
+		t_changeImg(t_idx);
+		t_timer=setInterval(t_changeAuto,7000); 
 	});
+
+		//좌우버튼 클릭시.....
+		t_lbtn.click(function(){
+
+			clearInterval(t_timer);
+			t_idx--;
+			if(t_idx<0){ 
+				t_idx=t_img_n-1;
+			}
+			t_changeImg(t_idx);
+			t_timer=setInterval(t_changeAuto,7000);
+
+		});
+
+		t_rbtn.click(function(){
+
+			clearInterval(t_timer);
+			t_idx++;
+			if(t_idx>t_img_n-1){ 
+				t_idx=0;
+			}
+			t_changeImg(t_idx);	
+			t_timer=setInterval(t_changeAuto,7000);
+		});
+
+
+
+
+
+    
+	
+
+
+});
+
+  
 
 
 
