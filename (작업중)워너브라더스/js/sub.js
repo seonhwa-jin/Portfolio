@@ -392,16 +392,29 @@ $(document).ready(function(){
 
   	/* 경로들을 다 변수에 할당 */
 	let t_img=$(".tour_changeimg ul li");	
+  let t_img2=$(".tour_changeimg2 ul li");
+  let t_img3=$(".tour_changeimg3 ul li");	
+
 	let t_btn=$(".tour_list_btn ul li");
+	let t_btn2=$(".tour_list_btn2 ul li");
+	let t_btn3=$(".tour_list_btn3 ul li");
+
 	let t_lbtn=$(".tour_side_btn .tour_lbtn");
+  let t_lbtn2=$(".tour_side_btn2 .tour_lbtn2");
+  let t_lbtn3=$(".tour_side_btn3 .tour_lbtn3");
+
 	let t_rbtn=$(".tour_side_btn .tour_rbtn");
+	let t_rbtn2=$(".tour_side_btn2 .tour_rbtn2");
+	let t_rbtn3=$(".tour_side_btn3 .tour_rbtn3");
 
 
 	/* 동작에 관련된 변수들  */
 	let t_oldidx=0;  //기존이미지
 	let t_idx=0;   //새로 바뀌는 이미지
 	let t_img_n=t_img.length; 
-	
+  let t_img_n2=t_img2.length;
+  let t_img_n3=t_img3.length;
+
 
 
 	/* 이미지와 버튼이 바뀌는 함수 */
@@ -423,21 +436,89 @@ $(document).ready(function(){
 		}
 	}
 
+  function t_changeImg2(t_idx){  
+
+		if(t_oldidx!=t_idx){ 
+
+			
+			/* 검은버튼, 주황버튼 컨트롤 */
+			t_btn2.eq(t_oldidx).removeClass("tour_active2"); 
+			t_btn2.eq(t_idx).addClass("tour_active2");
+
+			/* 기존이미지, 선택된 이미지 컨트롤 */
+			t_img2.eq(t_oldidx).stop(true,true).fadeOut(300);
+			t_img2.eq(t_idx).stop(true,true).fadeIn(300); 
+
+			/* 선택한 새 이미지 - > 기존 이미지로! */
+			t_oldidx=t_idx; 	
+		}
+	}
+  function t_changeImg3(t_idx){  
+
+		if(t_oldidx!=t_idx){ 
+
+			
+			/* 검은버튼, 주황버튼 컨트롤 */
+			t_btn3.eq(t_oldidx).removeClass("tour_active3"); 
+			t_btn3.eq(t_idx).addClass("tour_active3");
+
+			/* 기존이미지, 선택된 이미지 컨트롤 */
+			t_img3.eq(t_oldidx).stop(true,true).fadeOut(300);
+			t_img3.eq(t_idx).stop(true,true).fadeIn(300); 
+
+			/* 선택한 새 이미지 - > 기존 이미지로! */
+			t_oldidx=t_idx; 	
+		}
+	}
+
+
+
+
+
+
+
+
+
 
 
 	/* 자동함수 생성 */
 	function t_changeAuto(){
 			t_idx++;
 
-
 			/*선택한 이미지가 마지막일때 다시 처음 이미지부터 시작*/
 			if(t_idx>t_img_n-1){ 
-				t_idx=0;
+				t_idx=t_img_n;
 			}
 			t_changeImg(t_idx); 
 	}
 
-		t_timer=setInterval(t_changeAuto,7000); 
+
+//
+    function t_changeAuto2(){
+			t_idx++;
+
+			/*선택한 이미지가 마지막일때 다시 처음 이미지부터 시작*/
+			if(t_idx>t_img_n2-1){ 
+				t_idx=t_img_n2;
+			}
+			t_changeImg2(t_idx); 
+	}
+//
+
+
+
+    function t_changeAuto3(){
+			t_idx++;
+
+			/*선택한 이미지가 마지막일때 다시 처음 이미지부터 시작*/
+			if(t_idx>t_img_n3-1){ 
+				t_idx=t_img_n3;
+			}
+			t_changeImg3(t_idx); 
+	}
+
+
+
 
 
 
@@ -446,35 +527,108 @@ $(document).ready(function(){
 		//하단버튼 클릭시.....
 		t_btn.click(function(){
 
-		clearInterval(t_timer);
 		t_idx=$(this).index(); 
 		t_changeImg(t_idx);
-		t_timer=setInterval(t_changeAuto,7000); 
+	
 	});
+
+    t_btn2.click(function(){
+
+
+      t_idx=$(this).index(); 
+      t_changeImg2(t_idx);
+
+    });
+
+    t_btn3.click(function(){
+
+  
+      t_idx=$(this).index(); 
+      t_changeImg3(t_idx);
+    
+    });
+
+
+
+
+
+
+
+
+
 
 		//좌우버튼 클릭시.....
 		t_lbtn.click(function(){
-
-			clearInterval(t_timer);
+			
 			t_idx--;
 			if(t_idx<0){ 
 				t_idx=t_img_n-1;
 			}
 			t_changeImg(t_idx);
-			t_timer=setInterval(t_changeAuto,7000);
-
+		
 		});
+
+    t_lbtn2.click(function(){
+		
+			t_idx--;
+			if(t_idx<0){ 
+				t_idx=t_img_n2-1;
+			}
+			t_changeImg2(t_idx);
+			
+		});
+
+    t_lbtn3.click(function(){
+		
+			t_idx--;
+			if(t_idx<0){ 
+				t_idx=t_img_n3-1;
+			}
+			t_changeImg3(t_idx);
+		
+		});
+
+
+
+
+
+
+
 
 		t_rbtn.click(function(){
 
-			clearInterval(t_timer);
+			
 			t_idx++;
 			if(t_idx>t_img_n-1){ 
 				t_idx=0;
 			}
 			t_changeImg(t_idx);	
-			t_timer=setInterval(t_changeAuto,7000);
+		
 		});
+
+    t_rbtn2.click(function(){
+
+			
+			t_idx++;
+			if(t_idx>t_img_n2-1){ 
+				t_idx=0;
+			}
+			t_changeImg2(t_idx);	
+			
+		});
+
+
+    t_rbtn3.click(function(){
+
+		
+			t_idx++;
+			if(t_idx>t_img_n3-1){ 
+				t_idx=0;
+			}
+			t_changeImg3(t_idx);	
+	
+		});
+
 
 
 
