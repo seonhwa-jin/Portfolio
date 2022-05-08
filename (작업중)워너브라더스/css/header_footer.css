@@ -49,9 +49,8 @@
 .topBox2 ul li:last-child{padding-right: 10px;}
 
 .topBox2 ul li.activated{
-  color:rgb(147, 229, 254); 
+  color:goldenrod; 
   font-weight: bold;
-  
 }
 
 
@@ -63,7 +62,7 @@
   display: flex;
   align-items: center;
 }
-.WbMainMenu>li:not(.activated):hover>a{color:rgb(57, 171, 206)}
+.WbMainMenu>li:not(.activated):hover>a{color:gold;}
 
 
  .WbMainMenu>li a{
@@ -73,23 +72,21 @@
 .WbMainMenu>li ul{
 	display:none;
 	background: rgba(0, 0, 0, 0.613);
- 
-
-    position:absolute;
+  position:absolute;
 }
 .WbMainMenu>li ul li{
     float:left;
-	padding:10px 20px;
+	padding:10px;
 }
 .WbMainMenu>li ul li a{
 	color:#fff;
 	font-size:13px;
 }
-.WbMainMenu>li ul li:hover{background:rgba(57, 171, 206, 0.402);}
+.WbMainMenu>li ul li:hover{background:rgba(218, 165, 32, 0.441);}
 
 /*서브메뉴 가로폭,나오는위치값-<부모영역을 벗어나서 위치를 잡기 위함*/
-.WbMainMenu>li>ul.sub1{right:28px;top:40px;width:auto;}
-.WbMainMenu>li>ul.sub2{right:0px;top:40px;width:auto;}
+.WbMainMenu>li>ul.sub1{right:68px;top:40px;width:auto;}
+.WbMainMenu>li>ul.sub2{right:0;top:40px;width:auto;}
 
 
 
