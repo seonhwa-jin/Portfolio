@@ -1,0 +1,210 @@
+@import url(common.css);
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap');
+
+
+
+#wrap{
+  width: 100%;
+  max-width:1200px;
+  margin: 0 auto 30px;
+  padding: 0 1% 0 1%;
+  background-color: rgb(243, 243, 243);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  font-weight: 500;
+  color:rgb(76, 76, 76);
+}
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------
+                  header
+------------------------------------- */
+
+
+.top{
+  width: 100%;
+  max-width:1200px;
+  height: 70px;
+  margin:40px auto 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: rgb(55, 107, 175); */
+}
+
+.top .mainLogo{
+  width:100px;
+  height: 50px;
+}
+
+.top .mainMenu ul{
+  width: 500px;
+  height: 50px;
+  /* background-color: yellowgreen; */
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.top .mainMenu ul li{
+  padding-right: 10px;
+  font-family: 'Sarala', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.top .mainMenu ul li:hover{
+  color: crimson;
+  font-weight: bold;
+}
+
+
+#tab_top{display: none;}
+#mob_top{display: none;}
+
+
+.mainVisual{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.pc_mainVisual{
+  width:100%;
+  height: 500px;
+  background-color: rgb(22, 22, 22);
+}
+
+
+
+/* -----------------------------------
+                  content
+------------------------------------- */
+
+.trend_row1{
+  width: 100%;
+  max-width:1200px;
+  margin: 20px auto;
+  display: flex;
+  
+}
+
+.trend_row1 .trend{
+  width:23.5%;
+  height: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.trend1{background-color: #F4DFD0;}
+.trend2{background-color: #DAD0C2;}
+.trend3{background-color: #CDBBA7;}
+.trend4{background-color: #dfcfbc;}
+
+.trend_row1 .trend:not(:last-child){
+  margin-right: 2%;
+}
+
+
+.trendImage{
+  width: 70%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.521);
+  border-radius: 50%;
+}
+
+.trendTitle{
+  font-weight: 500;
+  font-size: 2.2vh;
+}
+
+.trendText{
+  padding: 15px;
+}
+
+
+
+
+
+
+
+.trend_row2{
+  width: 100%;
+  height: 350px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.miniImg{
+  width: 20%;
+  height: 100%;
+  background-color: rgb(110, 209, 28);
+  margin-right: 2%;
+}
+
+.userBoard1{
+  width: 38%;
+  height: 100%;
+  background-color: rgb(144, 218, 236);
+  margin-right: 2%;
+}
+
+.userBoard2{
+  width: 38%;
+  height: 100%;
+  background-color: rgb(231, 183, 253);
+}
+
+.trend_row3{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.keyword{
+  width: 38%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgb(153, 144, 236);
+  margin-right: 2%;
+  
+}
+
+.gallery{
+  width: 60%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: rgb(255, 194, 125);
+}
+
+
+
+/* -----------------------------------
+                  footer
+------------------------------------- */
+
+footer{
+  width: 100%;
+  max-width:1200px;
+}
+
+address{
+  width: 100%;
+  height: 120px;
+  background-color: rgb(249, 255, 159);
+}
