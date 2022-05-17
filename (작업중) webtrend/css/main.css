@@ -83,7 +83,7 @@
 .pc_mainVisual{
   width:100%;
   height: 500px;
-  background-color: rgb(22, 22, 22);
+  background:url(../image/visual_pc.png);
 }
 
 
@@ -108,28 +108,36 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  filter:;
 }
 
+.trend1{background-color: #FAD0C9;}
+.trend2{background-color: #FFD662;}
+.trend3{background-color: #00B1D2;}
+.trend4{background-color: #E2D3F3;}
+
+
+/* 베이지색상톤 
 .trend1{background-color: #F4DFD0;}
 .trend2{background-color: #DAD0C2;}
 .trend3{background-color: #CDBBA7;}
 .trend4{background-color: #dfcfbc;}
-
+ */
 .trend_row1 .trend:not(:last-child){
   margin-right: 2%;
 }
 
 
 .trendImage{
-  width: 70%;
-  height: 50%;
-  background-color: rgba(255, 255, 255, 0.521);
-  border-radius: 50%;
+  width: 80%;
 }
+.trendImage img{width: 100%; transition: all 0.2s;}
+.trendImage img:hover{transform: scale(1.03);}
 
 .trendTitle{
   font-weight: 500;
   font-size: 2.2vh;
+  font-weight: bold;
 }
 
 .trendText{
@@ -144,7 +152,7 @@
 
 .trend_row2{
   width: 100%;
-  height: 350px;
+  height: 250px;
   margin-bottom: 20px;
   display: flex;
 }
@@ -159,15 +167,101 @@
 .userBoard1{
   width: 38%;
   height: 100%;
-  background-color: rgb(144, 218, 236);
+  background:url(../image/postit1.png) no-repeat center center;
   margin-right: 2%;
+
+  display: flex;
+  flex-direction: column;
 }
+
+
+
+
+.board1_1, .board2_1{
+  color:#000;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 20px 5px 20px;
+}
+
+.board1_2, .board2_2{
+  margin: 0 20px;
+}
+
+.board1_2 ul li{
+  width: 100%;
+  margin: 15px 0px;
+  padding-bottom: 4px;
+  border-bottom:1px solid #7d91b3;
+  cursor: pointer;
+}
+
+.board1_2 ul li span{
+  text-indent: 8px;
+}
+
+.board1_2 ul li .mark{
+  width: fit-content;
+  height: fit-content;
+  transition: all 2s;
+}
+
+.board1_2 ul li:hover .mark{
+  background:url(../image/mark.png) no-repeat center center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
 
 .userBoard2{
   width: 38%;
   height: 100%;
-  background-color: rgb(231, 183, 253);
+  background:url(../image/postit2.png) no-repeat center center;
+  display: flex;
+  flex-direction: column;
 }
+
+.board2_2 ul li{
+  width: 100%;
+  margin: 15px 0px;
+  padding-bottom: 4px;
+  border-bottom:1px solid #f2edd7;
+  cursor: pointer;
+}
+
+.board2_2 ul li span{
+  text-indent: 8px;
+}
+
+.board2_2 ul li .mark2{
+  width: fit-content;
+  height: fit-content;
+  transition: all 2s;
+}
+
+.board2_2 ul li:hover .mark2{
+  background:url(../image/mark2.png) no-repeat center center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .trend_row3{
   width: 100%;
