@@ -11,6 +11,8 @@
 </head>
 <body>
 
+  <div class="topBtn"><a href="#" alt="to top"></a></div>
+
   <div id="wrap">
     <header>
       <div id="pc_top" class="top">
@@ -38,19 +40,23 @@
         </div>
       </div>
       <div id="mob_top" class="top">
-        <div class="mainLogo"><img src="image/logo.png" alt="logo"></div>
-        <div class="mainMenu">
-          <ul>
+        <div class="mainLogo">
+          <img src="image/logo.png" alt="logo">
+          <span class="menu_toggle_btn indent">전체 메뉴 토글 버튼</span>
+        </div>
+        <div class="mainMenu gnb">
+          <ul class="gnb_list">
             <li><a href="#none">Webtrend</a></li>
             <li><a href="#none">Flat</a></li>
             <li><a href="#none">Material</a></li>
             <li><a href="#none">Card</a></li>
             <li><a href="#none">Minimal</a></li>
+            <li class="close"><a href="#"><img src="image/close_white.png" alt="close"></a></li>
           </ul>
         </div>
       </div>
   
-  
+
       <div class="mainVisual">
         <div class="pc_mainVisual"></div>
         <div class="tab_mainVisual"></div>
@@ -190,6 +196,7 @@
   <!-- Script Source -->
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+  <script src="js/jquery-1.12.4.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
