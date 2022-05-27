@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <title>ARTE_main</title>
+</head>
+<body>
+
+  <div id="wrap">
+    <header>
+
+    </header>
+
+    <section>
+      <div class="test">hello~<br>hello!</div>
+      <div class="mainVisual">
+        <div class="backVisual"><img src="image/sand.png" alt="black"></div>
+        <div class="swiper-container frontVisual">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="image/main3.jpg" alt="main3"></div>
+              <div class="swiper-slide"><img src="image/main5.png" alt="main3"></div>
+              <div class="swiper-slide"><img src="image/main7.jpg" alt="main3"></div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+      </div> 
+      </div>
+      <!-- 후보: 21번,35,28,25,24,15(무한순환) -->
+    </section>
+
+  </div>
+
+  <!-- Script Source -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        loop: true,
+
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+    </script>
+</body>
+</html>

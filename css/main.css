@@ -1,0 +1,773 @@
+@import url(common.css);
+@import url(header_footer.css);
+@import url(swiper.min.css);
+@font-face {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bitgoeul_Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Bitgoeul_Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bitgoeul_Light';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Bitgoeul_Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+html{
+  font-size:100%;
+  overflow-y: hidden;
+}
+
+body{
+  -webkit-text-size-adjust:100%;
+  background-color: rgb(24, 24, 24);
+  /* max-width: 1800px; */
+}
+
+
+#wrap{
+  width: 100%;
+}
+
+
+
+
+
+
+/* ---------------------------------------------------------------------
+                                0.  INDEX
+--------------------------------------------------------------------- */
+
+
+.test{
+  position: absolute;
+  top:30%;
+  left: 30%;
+  font-size:5em;
+  color:white;
+  z-index: 100;
+}
+
+
+.mainVisual{
+  position: relative;
+  width: 100%;
+  color:white;
+
+}
+
+
+.backVisual{ /* 릴래티브,안늘어남, 명화부분이 될 곳 */
+  position: relative;
+  width: 100%;
+}
+
+
+
+ 
+.frontVisual{/* 앱솔루트,늘어남 ,검정배경 될 곳*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+.swiper-wrapper{
+  position: relative;
+}
+.swiper-slide{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -15;
+}
+
+
+/* 가변이미지 */
+.frontVisual img{width:100%;max-width:100%;}
+.backVisual img{width:100%;max-width:100%;}
+
+
+
+
+
+/* ---------------------------------------------------------------------
+                                 1. INTRO
+--------------------------------------------------------------------- */
+
+#intro{
+  width: 100%; 
+  height: 100vh;
+  background: url(../image/introBg.gif) no-repeat center center;
+  background-size: 100% 100%;
+  position: fixed;
+  overflow: auto;
+}
+
+.int_title{
+  width: 80%;
+  height: 45vh;
+  margin: 100px auto 50px;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.int_title{
+  color:#fff;
+  text-align: center;
+}
+
+.int_title h1{
+  font-family: 'Bitgoeul_Light';
+  font-weight: 100;
+  font-size: 30px;
+  animation: intro_fadeIn 2s;
+  animation-delay: 0;
+  opacity: 0;
+}
+.int_title h2{
+  margin-top: 5px;
+  font-size: 60px;
+  font-family: 'Bitgoeul_Bold';
+  text-shadow: 0 0 10px #ffffff;
+  animation: intro_fadeIn 2s ;
+  animation-delay: 1s;
+  opacity: 0;
+}
+.int_title h3{
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: 'Bitgoeul_Bold';
+  animation: intro_fadeIn 2s;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+/* @keyframes intro_fadeIn{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+
+ */
+
+
+
+
+
+
+
+
+
+.int_flex{
+  display: flex;
+  justify-content: center;
+  
+}
+.mouseBox{
+  position:relative;
+  top:30px;
+  width:100px;
+  height:200px;
+  /* background:yellow; */
+}
+.mouseBox .mouse{
+  position:relative;
+  width:40px;
+  height:65px;
+  border:4px solid rgb(255, 255, 255);
+  border-radius:30px;
+  margin:0 auto;
+}
+.mouseBox .mouse span{
+  width:6px;
+  height:16px;
+  background:rgb(255, 255, 255);
+  border-radius:20px;
+  position:absolute;
+  top:10px;
+  left:17px;
+  animation:line_down 1s infinite;
+}
+/*마우스 휠 animation*/
+@keyframes line_down{
+  0%{opacity:100%;top:10px;}
+  100%{opacity:0%;top:40px;}
+}
+
+/*화살표 animation*/
+@keyframes arrow_down{
+  0%{opacity:0;}
+  100%{opacity:1;}
+  0%{opacity: 0;}
+}
+
+.mouseBox .arrows_down .arrow1{
+  font-size:55px;
+  color:#fff;
+  position:absolute;
+  top:70px;
+  left:23px;
+  animation:arrow_down 1s infinite alternate;  /* alternate붙인거랑 아닌거 비교해보기 css20파일 공부 후 보기 */
+  animation-delay: 1s; 
+}
+.mouseBox .arrows_down .arrow2{
+  font-size:55px;
+  color:#fff;
+  position:absolute;
+  top:90px;
+  left:23px;
+  animation:arrow_down 1s infinite alternate;
+  animation-delay: 1.5s;
+}
+.mouseBox .arrows_down .arrow3{
+  font-size:55px;
+  color:#fff;
+  position:absolute;
+  top:110px;
+  left:23px;
+  animation:arrow_down 1s infinite alternate;
+  animation-delay: 2s;
+}
+
+
+
+
+
+
+
+
+.int_text{
+  display: flex;
+  justify-content: center;
+  font-family: 'LeferiPoint-WhiteObliqueA';
+}
+
+.int_text1{
+  color:#fff;
+  width: 75%;
+  background-color: rgba(0, 0, 0, 0.664);
+  padding: 15px;
+}
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------
+                             2.EXHIBITION
+--------------------------------------------------------------------- */
+
+#exhibition{
+  width: 100%; 
+
+}
+
+#exhibition .swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#exhibition .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------
+                             3.TICKET
+--------------------------------------------------------------------- */
+
+
+
+#ticket{
+  width: 100%;
+  height:100%;
+  background: url(../image/ticketBg.png) no-repeat left top;
+  background-size: 100%;
+  overflow-y:auto;
+}
+
+.page_title{
+  /* background-color:rgba(173, 165, 116, 0.267); */
+  padding-top:120px;
+  text-align: center;
+  color: rgb(233, 233, 233);
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  font-size: 1.8em;
+  font-weight: 900;
+}
+
+.ticket_table{
+  display: flex;
+  justify-content: center;
+  width:100%;
+  height: 40vh;
+  margin-top: 20px;
+  /* background-color: gold; */
+}
+
+table{
+  border: 1px solid #fff;
+  color:#fff;
+  width: 80%;
+  height: 100%
+}
+
+table tr td{
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #fff;
+}
+
+.table_row1{
+  background-color: rgba(0, 0, 0, 0.459);
+  font-weight: bold;
+}
+
+.table_col1{
+  background-color: rgba(0, 0, 0, 0.562);
+  font-weight: bold;
+}
+
+
+.ticket_text{
+  color:rgb(226, 226, 226);
+  font-size: 13px;
+  width: 80%;
+  margin: 50px auto 0;
+}
+
+.ticket_text p{
+  margin-bottom: 15px;
+}
+
+.ticket_text p span{
+  margin-left: 20px;
+}
+
+.ticket_text p i{
+  margin-right: 4px;
+  color: aqua;
+}
+
+.faqBtn{
+  color:rgb(226, 226, 226);
+  width: 80%;
+  padding-top: 20px;
+  margin: 20px auto;
+  
+}
+
+.faqBtn span{
+  width: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.623);
+  padding: 6px;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.faqBtn span:hover{
+  background-color: rgba(255, 255, 255, 0.233);
+}
+
+.faqBtn span a{
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+  padding: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------
+                             4.FAQ
+--------------------------------------------------------------------- */
+
+
+
+#faq{
+  width: 100%;
+  height:100%;
+  background: url(../image/faqBg.png) no-repeat left top;
+  background-size: 100% 100%;
+  overflow-y:auto;
+  color:#fff;
+}
+
+.faq_content{
+  width: 90%;
+  margin: 30px auto 0;
+  /* background-color: pink; */
+}
+
+.faq_section{
+  margin-bottom: 30px;
+  background-color: rgb(15, 15, 15);
+  border-radius: 5px;
+  padding: 20px 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid rgb(51, 51, 51);
+  
+}
+
+.faq_section:hover{
+  background-color: rgb(39, 39, 39);
+}
+
+
+.faq_q{
+  font-size: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: 'LeferiPoint-WhiteObliqueA';
+}
+
+.faq_a:not(:first-child){
+  display: none;
+  padding-top: 25px;
+  font-size: 13px;
+  color:rgb(231, 231, 231)
+}
+
+
+.faq_icon{
+  width:30px;
+  height: 30px;
+  /* background-color: red; */
+  margin-right: 10px;
+  background-size: cover;
+}
+
+.faq_icon1{background-image: url(../image/q1.png);}
+.faq_icon2{background-image: url(../image/q2.png);}
+.faq_icon3{background-image: url(../image/q3.png);}
+.faq_icon4{background-image: url(../image/q4.png);}
+.faq_icon5{background-image: url(../image/q5.png);}
+.faq_icon6{background-image: url(../image/q6.png);}
+.faq_icon7{background-image: url(../image/q7.png);}
+.faq_icon8{background-image: url(../image/q8.png);}
+.faq_icon9{background-image: url(../image/q9.png);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------
+                             5.LOCATION
+--------------------------------------------------------------------- */
+
+
+
+#location{
+  width: 100%;
+  height:100vh;
+  background: url(../image/locBg.png) no-repeat left top;
+  background-size: 100%;
+  overflow-y:auto;
+}
+
+#location h1{
+  color:#fff;
+  text-align: center;
+  font-weight: 100;
+}
+
+.loc_box{
+  width: 90%;
+  height: 300px;
+  /* background-color: rgba(255, 217, 0, 0.336); */
+  margin: 60px auto 0;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(233, 233, 233);
+}
+
+.loc_bus, .loc_car{
+  width: 45%;
+  height: 90%;
+  /* background-color: rgba(220, 20, 60, 0.596); */
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.loc_bus:hover, .loc_car:hover{
+  transform: scale(1.05);
+}
+
+.loc_icon{margin-bottom: 30px;}
+.loc_icon img{width: 50px;}
+
+.loc_txt{
+  background-color: rgb(51, 51, 51);
+  border-radius: 8px;
+  padding: 20px 5px 5px 5px;
+  height: 70%;
+}
+
+.loc_txt p{
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.loc_txt p:nth-of-type(1),.loc_txt p:nth-of-type(4){
+  margin-bottom: 5px;
+  color:rgb(123, 255, 255);
+  font-size: 13px;
+}
+
+
+.loc_map{
+  width:100%;
+  height: 30vh;
+  /* background-color: gold; */
+  position: absolute;
+  bottom: 0;
+}
+
+
+
+
+
+/* ---------------------------------------------------------------------
+                             6.GALLERY
+--------------------------------------------------------------------- */
+
+
+
+#gallery{
+  width: 100%;
+  height:100vh;
+ /*  background: url(../image/locBg.png) no-repeat left top;
+  background-size: 100%;
+  overflow-y:auto; */
+ overflow-y: auto;
+  background-color: transparent;
+}
+
+
+
+/* photo gallery*/
+.photo_box{
+  width: 90%;
+  height: fit-content;
+  /* background-color: blue; */
+  margin: 40px auto;
+ 
+}
+
+.photo_list{ 
+  width: 100%; 
+	box-sizing:border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.photo_list li{
+	width:32%; 
+	margin-bottom:20px;
+	/* background:orange; */
+  box-sizing: border-box;
+  border: 1px solid rgb(87, 87, 87);
+  overflow: hidden;
+}
+
+.photo_list li img{
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.photo_list li:hover img{
+  transform: scale(1.1);
+  filter: blur(0.5px) grayscale();
+}
+
+.photo_list li a{
+	font-size:30px;
+	font-weight:bold;
+	color:#fff;
+}
+
+.hidden1{display: none;}
+
+
+.photo_more_btn{
+  color:rgb(219, 219, 219);
+  width: 110px;
+  height: fit-content;
+  margin: 15px auto;
+  background-color: transparent;
+  text-align: center;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid rgb(128, 128, 128);
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.photo_more_btn:hover{
+  background-color: rgba(255, 255, 255, 0.26);
+}
+
+
+
+
+/* POPUP BOX ---------------------*/
+
+#popup{ /*검정배경*/
+	display:none; 
+	position:fixed; 
+	left:0; 
+	top:0;
+	width:100%; 
+	height:100%; 
+	background:rgba(0,0,0,0.85); 
+	z-index:1000;
+	/* overflow-y:scroll;  */
+	/*auto로 하면 스크롤바의 폭때문에 콘텐츠와 버튼사이의 간격이 생김->버튼위치맞춤*/
+}
+
+/*각 목록별 나오는 모달팝업 내용 나오는 부분*/
+
+.pop_body{   /*팝업내용박스*/
+	position:relative;
+	margin:40% auto;
+	width:80%;
+	/* background:#fff; */
+	z-index:10000;
+  ;
+}
+.pop>li{
+	width:100%;
+  height: ;
+	position:absolute;
+	text-align:center;
+	/* background:rgb(184, 100, 100); */
+	display:none;
+}
+
+.pop>li img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*버튼영역*/ 
+
+.m_btn{
+	position:relative;
+	top:15%;
+	width:100%;
+	height:5%;
+	color:#fff;
+	text-align:center;
+	overflow:hidden;
+	z-index:10000;
+  display: flex;
+  justify-content:right;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background-color: gold; */
+}
+.m_btn>li{
+	cursor:pointer;
+	overflow:hidden;
+	/* background:#e29393; */
+  width: 10%;
+  height: inherit; 
+}
+.m_btn>li:hover{/* s */}
+
+ /*닫기버튼*/
+.m_btn .btn_close{
+	cursor:pointer;
+}
+.m_btn .btn_close i{  /*아이콘폰트*/
+	font-size:30px;
+}
+
+/*다음이전 버튼*/
+
+.m_btn .left_btn, .m_btn .right_btn{float:left;}
+
+.m_btn .left_btn i,.m_btn .right_btn i{ 
+	position:relative;
+	font-size:30px;	
+	
+}
+
+.m_btn .g_page{  /*Page번호*/
+	font-size:15px;
+	color:#fff;
+	text-align:center;
+  width: 15%;
+  padding-bottom: 5px;
+}
+
+.m_btn .g_page span:first-child{color:rgb(86, 173, 255);}
+
+
+
