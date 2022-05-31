@@ -1,3 +1,15 @@
+
+function main_load(){
+  $(".index_title").find("h1").stop().animate({"opacity":"1"},1000)
+  $(".index_title").find("h2").stop().delay(1000).animate({"opacity":"1"},2000)
+  $(".index_title").find("h3").stop().delay(2000).animate({"opacity":"1"},3000)
+  /* $(".index_title").find("ttest::after").stop().animate({"width":"100%","left":"0"},1000) */
+}
+
+
+
+
+
 $(document).ready(function(){
 
 	 $(".gnb_list").css({"left":"-60%"});
@@ -20,13 +32,24 @@ $(document).ready(function(){
 	});
 
 
-//
-$(".int_title").mousemove(function(){
-  $(this).find("h1").stop().animate({"opacity":"1"},1000)
-  $(this).find("h2").stop().animate({"opacity":"1"},4000)
-  $(this).find("h3").stop().animate({"opacity":"1"},7000)
-})
+ 
 
+
+  //2.exhibition
+  $("#ex_notice").click(function(){  
+
+    $(this).fadeOut("fast")
+   }); 
+
+
+
+//
+/* $(".index_title").mousemove(function(){
+  $(this).find("h1").stop().animate({"opacity":"1"},700)
+  $(this).find("h2").stop().animate({"opacity":"1"},3000)
+  $(this).find("h3").stop().animate({"opacity":"1"},5000)
+})
+ */
 
 
 
