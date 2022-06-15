@@ -1,0 +1,112 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #2e417a;
+}
+
+.mockup .tablet-mockup {
+  border: 1px solid #eee;
+  width: 891px;
+  height: 671px;
+  position: relative;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.mockup .tablet-mockup:before {
+  content: '';
+  position: absolute;
+  width: 99%;
+  height: 98.5%;
+  border-radius: 27px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.87);
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner {
+  width: 99%;
+  height: 98.5%;
+  border-radius: 27px;
+  background-color: #1b1b1b;
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .iframe-url {
+  position: absolute;
+  border-radius: 15px;
+  width: 844px;
+  height: 634px;
+  background-color: #333;
+  /* border: 1px solid #eee; */
+  color: #fff;
+  font-size: 1.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .iframe-url iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .power {
+  /* border: 1px solid red; */
+  position: absolute;
+  right: 0;
+  top: 87px;
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .power span {
+  position: absolute;
+  width: 4px;
+  height: 60px;
+  border-radius: 0 5px 5px 0;
+  /* background-color: skyblue; */
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .volume {
+  /* border: 1px solid rgb(47, 0, 255); */
+  position: absolute;
+  width: 4px;
+  height: 220px;
+  top: 87px;
+  right: 100%;
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .volume span {
+  position: absolute;
+  width: 4px;
+  height: 60px;
+  border-radius: 0 5px 5px 0;
+  transform: rotateY(180deg);
+  /* background-color: rgb(137, 135, 235); */
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .volume span:nth-child(1) {
+  top: 0;
+  height: 35px;
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .volume span:nth-child(2) {
+  bottom: 70px;
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .volume span:nth-child(3) {
+  bottom: 0;
+}
+
+.mockup .tablet-mockup .tablet-mockup_inner .volume span, .mockup .tablet-mockup .tablet-mockup_inner .power span {
+  background-color: #ddd;
+}

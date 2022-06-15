@@ -1,0 +1,156 @@
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color:cadetblue;
+  position: relative;
+}
+
+.mockup{
+  position: absolute;
+  z-index: 10;
+  
+  .mobile-mockup{
+    border: 1px solid rgb(0, 0, 0);
+    width: 430px; //320은 너무작고 400대가 적당
+    height: 850px;
+    position: relative;
+    border-radius: 30px;
+    background-color: #161616; //폰 색상
+    overflow: hidden;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 97.5%;
+      height: 98.5%;
+      border-radius: 27px;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.377); 
+    };
+    .mobile-mockup-inner{
+      overflow: hidden;
+      background-color: green;
+      width: 95.5%;
+      height: 98%;
+    
+        content: '';
+        position: absolute;
+        border-radius: 27px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        /* box-shadow: 0 0 10px rgba(201, 11, 11, 0.25);  */
+        
+
+      .iframe-url{
+        position: absolute;
+        z-index: 10;
+        width:100%;
+        height: 100%;
+        background-color: rgb(161, 161, 161);
+        /* border: 1px solid #eee; */
+        color:rgb(59, 59, 59);
+        font-size: 1.5rem;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        iframe{ //모바일페이지가 연결되는 부분
+          width: 100%;
+          height: 100%;
+        }
+       
+      }
+      .camera{
+        /* border: 1px solid red; */
+        position: absolute;
+        z-index: 999;
+        top:10px;
+        left:50%;
+        transform: translateX(-50%);
+        width: 400px;
+        height: 3px;
+        span{
+          background-color: #555;//카메라렌즈색상
+          position: absolute;
+          z-index: 999;
+          &:nth-child(1){ //여긴 span의 개별부분
+            width:80px;
+            height: 7px;
+            border-radius: 7px;
+            top:3%;
+            left:50%;
+            transform: translate(-50%,-50%);
+          }
+          &:nth-child(2){ 
+            width:7px;
+            height:7px;
+            border-radius:50%;
+            top:3%;
+            left:65%;
+            transform: translate(-50%,-50%);
+          }
+          
+        }
+      }
+    }   
+  }
+}
+
+
+.btns{
+  border: 1px solid rgb(136, 240, 76);
+    width: 430px; //320은 너무작고 400대가 적당
+    height: 850px;
+    position: absolute;
+    z-index: 5;
+    border-radius: 30px;
+    background-color: transparent;
+  
+    
+    .power{
+      border: 1px solid red;
+      position: absolute;
+      right: 0;
+      top:87px;
+      span{
+        position: absolute;
+        width:5px;
+        height: 40px;
+        border-radius: 0 5px 5px 0;
+        /* background-color: skyblue; */
+      }
+    }
+    .volume{
+      /* border: 1px solid rgb(47, 0, 255); */
+      position: absolute;
+      width:5px;
+      height: 150px;
+      top:87px;
+      right: 100%;
+      span{
+        position: absolute;
+        width:5px;
+        height: 60px;
+        border-radius: 0 5px 5px 0;
+        transform: rotateY(180deg);
+        /* background-color: rgb(137, 135, 235); */
+       
+        &:nth-child(1){
+          bottom: 75px;
+        }
+        &:nth-child(2){
+          bottom: 0;
+        }
+      }
+    }
+    .volume span, .power span{background-color: #252525;}
+
+}
