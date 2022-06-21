@@ -74,22 +74,31 @@ hr {
 --------------------------------------------------------------------- */
 
 /* 스크롤바 설정*/
-body::-webkit-scrollbar{
+html::-webkit-scrollbar,
+#sec02-1_popup::-webkit-scrollbar,
+#sec02-2_popup::-webkit-scrollbar{
 	width: 6px;
 }
 
 /* 스크롤바 막대 설정*/
 
-body::-webkit-scrollbar-thumb{
+html::-webkit-scrollbar-thumb,
+#sec02-1_popup::-webkit-scrollbar-thumb,
+#sec02-2_popup::-webkit-scrollbar-thumb{
 	height: 17%;
 	background-color: rgb(64, 70, 70);
 	border-radius: 10px;  
 }
 
 /* 스크롤바 뒷 배경 설정*/
-body::-webkit-scrollbar-track{
+html::-webkit-scrollbar-track,
+#sec02-1_popup::-webkit-scrollbar-track,
+#sec02-2_popup::-webkit-scrollbar-track{
 	background-color: rgba(17, 27, 27, 0.24);
 }
+
+
+
 
 
 
@@ -103,9 +112,11 @@ body::-webkit-scrollbar-track{
 
 
 #wrapper {
-	position: relative;
+	position: relative;	
 }
-#topMenu {
+
+
+/* #topMenu {
 	width: 100%;
 	background: #fff;
 	}
@@ -116,7 +127,7 @@ body::-webkit-scrollbar-track{
 		text-transform: uppercase;
 		font-size: 18px;
 		font-weight: bold;
-		}
+		} */
 
 
 
@@ -128,7 +139,7 @@ body::-webkit-scrollbar-track{
 
 
 #sideBar {
-	z-index: 5;
+	z-index:4;
 	position: fixed;
 	top: 50%;
 	right: 16px;
@@ -184,30 +195,34 @@ nav#primary a:hover, nav#primary a.active {
 	white-space: nowrap;
 	background: transparent url('../img/nav-arrow.png') 100% 50% no-repeat;
 	} */
+
 nav.next-prev {
-	margin: 20px 0 0 0;
+	margin: 20px 20px 0 0;
 	}
-	a.prev,
-	a.next {
-		display: block;
-		width: 15px;
-		height: 11px;
-		text-indent: -9999px;
+.updown_btn{
+	display: flex;
+}
+a.prev,
+a.next {
+	display: block;
+	width: 20px;
+	height: 20px;
+	text-indent: -9999px;
+	}
+a.prev {
+	/* margin: 0 auto 5px auto; */
+	background: gold;
+	}
+	a.prev:hover {
+		background: red;
 		}
-	a.prev {
-		margin: 0 auto 5px auto;
-		background: transparent url('../img/scroll-arrow-up.png') 0 0 no-repeat;
+a.next {
+	/* margin: 5px auto 0 auto; */
+	background: blue;
+	}
+	a.next:hover {
+		background: skyblue;
 		}
-		a.prev:hover {
-			background: transparent url('../img/scroll-arrow-up.png') 0 -11px no-repeat;
-			}
-	a.next {
-		margin: 5px auto 0 auto;
-		background: transparent url('../img/scroll-arrow-down.png') -1px 0 no-repeat;
-		}
-		a.next:hover {
-			background: transparent url('../img/scroll-arrow-down.png') -1px -11px no-repeat;
-			}
 
 
 
@@ -227,7 +242,8 @@ nav.next-prev {
 #portf_main{
 	width: 100%;
 	height:1090px;
-	background-color: rgb(71, 48, 126);
+	/* background-color: rgb(71, 48, 126); */
+	background-color: rgb(67, 67, 67);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -249,6 +265,9 @@ nav.next-prev {
 .jinlogo{
 	width:100px;
 	height:100px;
+	position: absolute;
+	left: 20px;
+	top:20px;
 }
 
 
@@ -278,60 +297,61 @@ nav.next-prev {
 
 
 
-/* content */
+
+/* 01~06 content position */
 #content {
 	z-index: 4;
 	position: relative;
-	max-width: 940px;
+	max-width: 1300px;
 	padding: 0 10px;
 	margin: 0 auto;
 	line-height: 1.7;
 	}
-	#content article {
-		width: 300px;
+#content h1 {
+	margin: 0 0 25px 0;
+	font-size: 40px;
+	font-family: Georgia, serif;
+	font-weight: normal;
+	line-height: 65px;
+	}
+
+#sec01,#sec02,#sec03,#sec04,#sec05,#sec06{padding-top: 30px;}
+
+
+#sec01 {
+	position: absolute;
+	top: 0px;
+	}
+	
+#sec02 {
+	position: absolute;
+	top: 1090px;
+	}
+#sec03 {
+	position: absolute;
+	top: 2180px;
+	}
+#sec04 {
+	position: absolute;
+	top: 3270px;
+	}
+#sec05 {
+		position: absolute;
+		top: 4360px;
 		}
-		#sec01,
-		#sec05,
-		#sec06 ,
-		#sec02,
-		#sec03,
-		#sec04 {
-			padding-top: 105px;
-			}
+#sec06 {
+	position: absolute;
+	top: 5450px;
+	}
 
 
-		#sec01 {
-			position: absolute;
-			top: 0px;
-			}
-			
-		#sec02 {
-			position: absolute;
-			top: 1090px;
-			}
-		#sec03 {
-			position: absolute;
-			top: 2180px;
-			}
-			#content h1 {
-				margin: 0 0 25px 0;
-				font-size: 60px;
-				font-family: Georgia, serif;
-				font-weight: normal;
-				line-height: 65px;
-				}
-		#sec04 {
-			position: absolute;
-			top: 3270px;
-			}
-		#sec05 {
-				position: absolute;
-				top: 4360px;
-				}
-		#sec06 {
-			position: absolute;
-			top: 5450px;
-			}
+
+
+
+
+/* -----------------------------
+          Bg- Clouds(삭제가능)
+-------------------------------- */
 
 
 
@@ -428,4 +448,347 @@ nav.next-prev {
 		top: 1020px;
 		left: 450px;
 		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sec02_tab{
+	width: 400px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: pink;
+	margin-bottom: 50px;
+}
+
+.sec02_tab li{
+	margin: 5px;
+	background-color: skyblue;
+	width:130px;
+	height: 40px;
+	text-align: center;
+	font-size: 20px;
+	
+}
+
+.sec02_tab li a{
+	width:100%;
+	height:100%;
+	
+}
+
+
+
+
+
+
+
+/* -----------------------------
+              02-1
+-------------------------------- */
+
+.graphic_list{ 
+	margin:0 auto; 
+	width:1200px;  
+	box-sizing:border-box;
+}
+.graphic_list li{
+	float:left; 
+	width:180px; 
+	height:180px; 
+	margin-left:20px;
+	margin-bottom:20px;
+	background:orange;
+}
+.graphic_list li a{
+	font-size:30px;
+	font-weight:bold;
+	color:#fff;
+}
+
+
+/* POPUP BOX ---------------------*/
+
+#sec02-1_popup{ /*검정배경*/
+	display:none; 
+	position:fixed; 
+	left:0; 
+	top:0;
+	width:100%; 
+	height:100%; 
+	background:rgba(0,0,0,0.85); 
+	z-index:1000;
+	overflow-y:scroll;
+	
+	/*auto로 하면 스크롤바의 폭때문에 콘텐츠와 버튼사이의 간격이 생김->버튼위치맞춤*/
+}
+
+/*각 목록별 나오는 모달팝업 내용 나오는 부분*/
+
+.sec02-1_pop_body{   /*팝업내용박스*/
+	position:relative;
+	height:100%;	
+	margin:0 auto;
+	width:1200px;
+	background:#fff;
+	z-index:10000;
+}
+.sec02-1_pop>li{
+	width:1200px;
+	position:absolute;
+	text-align:center;
+	background:#fff;
+	display:none;
+}
+.sec02-1_pop>li img{
+	width: 100%;
+}
+
+/*버튼영역*/ 
+.m_btn{
+	position:fixed;
+	left:50%;
+	top:0px;
+	margin-left:597px;
+	width:80px;
+	height:150px;
+	color:#fff;
+	text-align:center;
+	overflow:hidden;
+	z-index:10000;
+}
+.m_btn>li{
+	cursor:pointer;
+	overflow:hidden;
+	background:#af7d7d00;
+}
+.m_btn>li:not(:last-child):hover{color:#21a97e}
+
+ /*닫기버튼*/
+.m_btn .btn_close{
+	height:70px;
+	width:80px;
+	cursor:pointer;
+	border-bottom:1px solid #ffffff4e;
+}
+.m_btn .btn_close i{  /*아이콘폰트*/
+	position:relative;
+	top:15px;
+	font-size:40px;
+}
+
+/*다음이전 버튼*/
+
+.m_btn .left_btn, .m_btn .right_btn{float:left;}
+
+.m_btn .left_btn i,.m_btn .right_btn i{ 
+	position:relative;
+	top:10px;
+	font-size:30px;	
+	width:40px;
+	height:50px;	
+}
+
+.m_btn .g_page{  /*Page번호*/
+	font-size:12px;
+	color:#fff;
+	width:80px;
+	padding-top:10px;
+	height:50px;
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------
+              02-2
+-------------------------------- */
+
+.uiux_list{ 
+	margin:0 auto; 
+	width:1200px;  
+	box-sizing:border-box;
+}
+.uiux_list li{
+	float:left; 
+	width:180px; 
+	height:180px; 
+	margin-left:20px;
+	margin-bottom:20px;
+	background:rgb(62, 165, 50);
+}
+.uiux_list li a{
+	font-size:30px;
+	font-weight:bold;
+	color:#fff;
+}
+
+
+/* POPUP BOX ---------------------*/
+
+#sec02-2_popup{ /*검정배경*/
+	display:none; 
+	position:fixed; 
+	left:0; 
+	top:0;
+	width:100%; 
+	height:100%; 
+	background:rgba(0,0,0,0.85); 
+	z-index:1000;
+	overflow-y:scroll;
+	
+	/*auto로 하면 스크롤바의 폭때문에 콘텐츠와 버튼사이의 간격이 생김->버튼위치맞춤*/
+}
+
+/*각 목록별 나오는 모달팝업 내용 나오는 부분*/
+
+.sec02-2_pop_body{   /*팝업내용박스*/
+	position:relative;
+	height:100%;	
+	margin:0 auto;
+	width:1200px;
+	background:#fff;
+	z-index:10000;
+}
+.sec02-2_pop>li{
+	width:1200px;
+	position:absolute;
+	text-align:center;
+	background:#fff;
+	display:none;
+}
+.sec02-2_pop>li img{
+	width: 100%;
+}
+
+/*버튼영역*/ 
+.m_btn2{
+	position:fixed;
+	left:50%;
+	top:0px;
+	margin-left:597px;
+	width:80px;
+	height:150px;
+	color:#fff;
+	text-align:center;
+	overflow:hidden;
+	z-index:10000;
+}
+.m_btn2>li{
+	cursor:pointer;
+	overflow:hidden;
+	background:#af7d7d00;
+}
+.m_btn2>li:not(:last-child):hover{color:#21a97e}
+
+ /*닫기버튼*/
+.m_btn2 .btn_close2{
+	height:70px;
+	width:80px;
+	cursor:pointer;
+	border-bottom:1px solid #ffffff4e;
+}
+.m_btn2 .btn_close2 i{  /*아이콘폰트*/
+	position:relative;
+	top:15px;
+	font-size:40px;
+}
+
+/*다음이전 버튼*/
+
+.m_btn2 .left_btn2, .m_btn2 .right_btn2{float:left;}
+
+.m_btn2 .left_btn2 i,.m_btn2 .right_btn2 i{ 
+	position:relative;
+	top:10px;
+	font-size:30px;	
+	width:40px;
+	height:50px;	
+}
+
+.m_btn2 .g_page2{  /*Page번호*/
+	font-size:12px;
+	color:#fff;
+	width:80px;
+	padding-top:10px;
+	height:50px;
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
