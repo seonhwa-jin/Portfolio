@@ -6,6 +6,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellota:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+@font-face {
+    font-family: 'Happiness-Sans-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'YdestreetB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/YdestreetB.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 
 html { 
@@ -190,7 +204,9 @@ nav#primary a {
 }
 nav#primary a:hover, nav#primary a.active {
 
-	background: #9d44fd;
+	background: #333435;
+
+	/* 내 최애색:#238992be; */
 }
 /* nav#primary h1 {
 	position: absolute;
@@ -255,9 +271,8 @@ a.next {
 	height:1090px;
 	/* background-color: rgb(71, 48, 126); */
 	background-color: rgb(67, 67, 67);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	position: relative;
+	overflow: hidden;
 }
 
 
@@ -266,9 +281,15 @@ a.next {
 
 #portf_main .test{
 	width: 300px;
-	font-size: 50px;
+	font-size: 15px;
 	height: 100px;
-	color:#fff;
+	color:blue;
+	position: fixed;
+	z-index: 10;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 20;
 }
 
 
@@ -276,9 +297,66 @@ a.next {
 .jinlogo{
 	width:100px;
 	height:100px;
-	position: absolute;
+	position: fixed;
 	left: 20px;
 	top:20px;
+	z-index: 10;
+}
+
+.main_gliter{
+	width:100%;
+	height:1090px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: royalblue;
+	background: url(../img/main_gliter.png) left no-repeat;
+	z-index: 4;
+
+}
+
+.main_blue{
+	width:100%;
+	height:1090px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: royalblue;
+	background: url(../img/main_blue3.png) top left no-repeat;
+	z-index: 5;
+}
+
+.main_text{
+	width: 70%;
+	height: 30%;
+	/* background-color: purple; */
+
+	position: absolute;
+	z-index: 6;
+	text-align: center;
+	
+	left: 50%;
+	top:200px;
+	transform: translateX(-50%);
+
+	color: #fff;
+	font-family: 'YdestreetB';
+	font-size: 45px;
+}
+
+.main_text>span{text-shadow: 0 0 10px #fff;}
+
+.main_gold{
+	width:100%;
+	height:1090px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: rgba(255, 217, 0, 0.411);
+	background: url(../img/main_gold2.png) top left no-repeat;
+	z-index: 7;
+	
+	
 }
 
 
@@ -1048,7 +1126,7 @@ a.next {
 }
 
 .w_bg ul li:nth-child(3) {
-  background-image: url(../img/w_bg_03.jpg);
+  background-image: url(../img/w_bg_03.png);
 }
 
 
@@ -1193,37 +1271,44 @@ a.next {
 	width:200px;
 	height:20px;
 	overflow:hidden;
-	border:1px solid rgb(168, 168, 168);
-	border-radius:20px;
+	border:1px solid rgb(90, 90, 90);
+	border-radius:10px;
 	text-align: center;
 	position: relative;
-
+	transition:all 0.3s;
 }
 
-.graph .b21{ /*오렌지막대(공통)*/
+.graph .b21{ /*배경 막대*/
 	width:100%;
 	height:20px;
 	background:rgb(24, 24, 24); 
 	border-radius:20px;
   transition:all 0.3s;
 }
-.graph .b31{  /*그린막대(공통)*/
+.graph .b31{  /*개별 막대*/
 	width:0;
 	height:20px;
 	background:#6c0794;
-	border-radius:20px;
+	border-radius:10px;
   transition:all 0.3s;
 }
+.w_txt_slide ul li:nth-child(2) .graph .b31{background:#5a5a5a;}
+.w_txt_slide ul li:nth-child(3) .graph .b31{background:#553b22;}
+
+
 
 .personal{
 	position: absolute; 
 	width: 100%;
 	text-align: center;
-	color: rgb(168, 168, 168);
+	color: rgb(90, 90, 90);
+	transition:all 0.3s;
 }
 
-#sec03:hover .b21{/* width:100px; */}
+
+#sec03:hover .b1{border:1px solid rgb(175, 175, 175);}
 #sec03:hover .b31{width:100%;}
+#sec03:hover .personal{color:rgb(214, 214, 214);}
 
 
 
@@ -1246,8 +1331,36 @@ a.next {
   font-size:40px;
   font-family: 'Raleway', sans-serif;
 	font-weight: 900;
+	text-transform: uppercase;
   color:#ececec;
 	margin: 0;
+}
+
+.sec03_left{
+	display: inline-block;
+	background-color: rgb(56, 56, 56);
+	border-radius: 5px;
+	width: 80px;
+	height: 25px;
+	text-align: center;
+	font-size: 12px;
+	padding-top: 4px;
+	margin-bottom: 10px;
+}
+.w_txt_slide ul li:nth-child(2) .sec03_left{background:#1b1b1b;}
+.w_txt_slide ul li:nth-child(3) .sec03_left{background:#42220f;}
+
+
+.sec03_right{
+	display: inline-block;
+	width: 200px;
+	height: 25px;
+	font-size: 14px;
+	margin-left: 10px;
+}
+.sec03_right span{
+	/* background-color: red; */
+	margin-right: 13px;
 }
 
 .ptitle{
@@ -1256,6 +1369,26 @@ a.next {
   color:#ececec;
 }
 
+.pnotice{
+  font-size:13px;
+  font-family: 'Raleway', sans-serif;
+  color:#fff;
+	margin-top: 130px;
+}
+
+.pnotice span{color:#09ff00;font-size: 15px;margin-right:3px;}
+
+/* .w_txt_slide ul li:nth-child(2) .pnotice span{color:#086896;}
+
+.w_txt_slide ul li:nth-child(3) .pnotice span{color:#635181;} */
+
+
+
+
+
+
+
+
 .ptext{
   font-size:16px;
   font-family: 'Raleway', sans-serif;
@@ -1263,7 +1396,7 @@ a.next {
 }
 
 /*Detail 버튼*/
-.w_txt_slide ul li span, .w_txt_slide ul li .pub_link{ 
+.w_txt_slide ul li .sec03_btn, .w_txt_slide ul li .pub_link{ 
   display:block;
   width:200px;
   height:28px;
@@ -1276,16 +1409,20 @@ a.next {
   border-radius:3px;
   cursor:pointer;
 }
-.w_txt_slide ul li span:hover, .w_txt_slide ul li .pub_link:hover{
+.w_txt_slide ul li .sec03_btn:hover, .w_txt_slide ul li .pub_link:hover{
   background:#6c0794;
   color:#fff;
   font-weight:700;
 }
 
-.w_txt_slide ul li:nth-child(2) span{color:#086896;}
-.w_txt_slide ul li:nth-child(2) span:hover{background:#086896;color:#fff;}
-.w_txt_slide ul li:nth-child(3) span{color:#635181;}
-.w_txt_slide ul li:nth-child(3) span:hover{background:#635181;color:#fff;}
+.w_txt_slide ul li:nth-child(2) .sec03_btn,
+.w_txt_slide ul li:nth-child(2) .pub_link{color:#086896;}
+.w_txt_slide ul li:nth-child(2) .sec03_btn:hover,
+.w_txt_slide ul li:nth-child(2) .pub_link:hover{background:#086896;color:#fff;}
+.w_txt_slide ul li:nth-child(3) .sec03_btn,
+.w_txt_slide ul li:nth-child(3) .pub_link{color:#42220f;}
+.w_txt_slide ul li:nth-child(3) .sec03_btn:hover,
+.w_txt_slide ul li:nth-child(3) .pub_link:hover{background:#42220f;color:#fff;}
 
 
 /*___________오른쪽 화면디자인 영역*/

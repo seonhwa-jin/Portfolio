@@ -2,6 +2,75 @@ $(document).ready(function(){
 
 
 
+  //main
+  $(window).scroll(function(){ //브라우저에 스크롤이 발생하는 순간부터 
+		 let curpos=$(window).scrollTop(); 
+		/*$(".jinlogo").stop().animate({top:curpos},"fast");
+
+    if($(this).scrollTop()>545){
+      $(".jinlogo").fadeOut();
+    }else{
+      $(".jinlogo").fadeIn();
+    } */
+
+    $("#txt1").text($(this).scrollTop());
+
+    
+
+    if($(this).scrollTop()<29){
+      $(".main_blue").stop().animate({top:0},"normal");
+    }else if($(this).scrollTop()>30 && $(this).scrollTop()<200){
+      $(".main_blue").stop().animate({top:curpos+100},"normal");
+    } else if($(this).scrollTop()<201){
+      $("main_blue").stop().animate({top:100},"normal");
+    } 
+
+    if($(this).scrollTop()<29){
+      $(".main_gold").stop().animate({top:0},"slow");
+    }else if($(this).scrollTop()>30 && $(this).scrollTop()<200){
+      $(".main_gold").stop().animate({top:curpos},"slow");
+    } else if($(this).scrollTop()<201){
+      $("main_gold").stop().animate({top:0},"slow");
+    } 
+
+    if($(this).scrollTop()<29){
+      $(".main_text").stop().animate({top:150},"slow");
+    }else if($(this).scrollTop()>30 && $(this).scrollTop()<200){
+      $(".main_text").stop().animate({top:curpos+250},"slow");
+    } else if($(this).scrollTop()<201){
+      $("main_text").stop().animate({top:0},"slow");
+    } 
+
+
+    /*if($(this).scrollTop()>200 && $(this).scrollTop()<415){
+      $(".main_blue").stop().animate({top:curpos},"fast");
+    }else if($(this).scrollTop()<416){
+      $("main_blue").stop().animate({top:415},"fast");
+    } else{
+      $("main_blue").stop().animate({top:10},"fast");
+    }   */
+
+  /*   if($(this).scrollTop()<149){
+      $(".main_gold").stop().animate({top:curpos+200},"normal");
+    }else if($(this).scrollTop()>150){
+      $(".main_gold").stop().animate({top:curpos},"normal");
+    } 
+ */
+    /* if($(this).scrollTop()>300 && $(this).scrollTop()<415){
+      $(".main_gold").stop().animate({top:curpos},"fast");
+    }else{
+      $(".main_gold").stop().animate({top:415},"fast")
+    }  */
+
+    if($(this).scrollTop()>300){
+      $(".jinlogo").fadeOut();
+    }else{
+      $(".jinlogo").fadeIn();
+    } 
+    
+	});
+
+
   
 
   //02
@@ -171,6 +240,8 @@ $(document).ready(function(){
   //오른쪽 상단 버튼-다음보기
   $(".right_btn2").click(function(){
 
+    $("#sec02-2_popup").scrollTop(0);
+
     if(g_pop2<8){
 
       $(".sec02-2_pop>li").eq(g_pop2).stop().fadeOut(); //기존거 사라짐
@@ -186,6 +257,8 @@ $(document).ready(function(){
 
   //오른쪽 상단 버튼-이전보기
   $(".left_btn2").click(function(){
+
+    $("#sec02-2_popup").scrollTop(0);
 
     if(g_pop2>0){
       $(".sec02-2_pop>li").eq(g_pop2).stop().fadeOut(); //기존거 사라짐
@@ -260,7 +333,7 @@ $(document).ready(function(){
   $(".w_txt_slide>ul>li>span").click(function(){
 
     w_pop=$(this).parent().index();	//Detail 버튼의 부모의 index	 
-    $(".w_page span:nth-child(1)").text(w_pop+1); //오른쪽 상단 페이지 넘버
+   
     $("html").css({overflowY:"hidden"}); //기존 html 스크롤 숨기기
     $(".w_pop>li").eq(w_pop).show(); //w_pop index에 해당하는 팜업보이기
     $("#w_popup").stop(true,true).fadeIn(); //검정배경    
