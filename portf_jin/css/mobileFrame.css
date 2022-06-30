@@ -1,4 +1,13 @@
-.mockup {
+.mockup_package{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: relative;
+}
+
+.mockup{
   position: absolute;
   z-index: 10;
 }
@@ -27,7 +36,7 @@
 
 .mockup .mobile-mockup .mobile-mockup-inner {
   overflow: hidden;
-  background-color: green;
+  background-color: rgb(0, 0, 0);
   width: 95.5%;
   height: 98%;
   content: '';

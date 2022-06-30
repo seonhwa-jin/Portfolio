@@ -1202,24 +1202,29 @@ a.next {
   width:300px;
   height:70px;
   display: flex;
-	/* background-color: gold;	 */
+	/* background-color: gold; */	
 	justify-content: space-between;
 }
 .w_list li{
   float:left;
   font-size: 45px;
   font-weight:700;
-  padding:0 5px;
+  padding:0 0;
   color:rgba(92, 92, 92, 0.549);
   cursor:pointer;
-	width: 70px;
-	height: 100%;
+	width: 50px;
+	height: 60px;
 	/* background-color: red; */
 	text-align: center;
 }
 .w_list li.btn_active{
 	color:#fff;
 	text-shadow: 0 0 5px #ffffff;
+}
+
+.w_list li:nth-child(3){
+	border-bottom:5px solid #5c5c5c8c;
+	
 }
 
 
@@ -2068,12 +2073,10 @@ a.next {
 
 
 
-/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
 
 
 /* -----------------------------
-              05 (수정중)
+              05 
 -------------------------------- */
 
 
@@ -2100,7 +2103,7 @@ a.next {
 .sec05_notice_05{
 	position: absolute;
 	z-index: 50;
-	color:rgb(231, 231, 231);
+	color:rgba(231, 231, 231, 0.63);
 	font-size: 11px;
 	left: 7px;
 	bottom: 5px;
@@ -2204,7 +2207,7 @@ a.next {
   font-size:40px;
   font-family: 'Raleway', sans-serif;
 	font-weight: 900;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
   color:#ececec;
 	margin: 0;
 }
@@ -2391,7 +2394,7 @@ a.next {
 	margin: 60px 0 0 80px;
 	/* background-color: rosybrown; */
  	background: url(../img/sec05_3.png) no-repeat top right;
-	background-size:81%; 
+	background-size:85%; 
 	right: 0; 
 	top:0;
 }
@@ -2523,9 +2526,9 @@ a.next {
   background: rgba(0,0,0,0.9);
   z-index: 99999;
   overflow: auto;
-	display: flex;
+	/* display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: center; */
 }
 
 
@@ -2552,5 +2555,379 @@ a.next {
 
 
 iframe{border: none;} /* 아이프레임 기본테두리 없애기 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&- */
+
+
+
+/* -----------------------------
+              06 (수정중)
+-------------------------------- */
+
+#sec06_content{
+	width: 1300px;
+	height: 85vh;
+	/* background-color: skyblue; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.sec06_content_in{
+	width: 97%;
+	height: 95%;
+	/* background-color: royalblue; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.sec06_square{
+	width: 30%;
+	height: inherit;
+	/* background-color: #21a97e; */
+	position: relative;
+}
+
+
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&- */
+
+/* 여기서부터 SCSS긁은거 */
+
+.plan {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  /* background: #FFFFFF; */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	border-radius: 10px;
+
+}
+
+.square1{
+	background: url(../img/sec06_5.png) center center no-repeat;
+	background-size: 100% 100%;
+}
+
+.plan__content {
+  position: relative;
+  height: 100%;
+
+}
+
+.talk_bubble{
+	margin: 10px auto;
+	width: 60%;
+	height: 140px;
+	background: url(../img/talk.png) center center no-repeat;
+	background-size: 100% 100%;
+	padding-top: 10px;
+	/* background-color: gold; */	
+	transition: all 0.2s;
+}
+
+.plan:hover .talk_bubble{
+	background: url(../img/talk_original.png) center center no-repeat;
+	background-size: 100% 100%;
+}
+
+.sec06_logo{
+	/* position: absolute;
+	top: 0;
+	left: 0; */
+	width: 100px;
+	height: 70px;
+	/* background-color: rgb(21, 160, 81); */
+	margin: 0 auto 3px;
+}
+
+.sec06_logo img{margin:0 auto;height: 100%;}
+
+
+.plan__heading {
+  font-size: 20px;
+  /* line-height: 7rem; */
+  /* padding-left: 3rem; */
+  color: #ff8915;
+	text-align: center;
+	font-family: 'Raleway';
+	
+	
+}
+
+.plan__steps {
+  position: relative;
+  height: 210px;
+}
+
+.plan__step {
+  position: relative;
+	width: 100%;
+  height: 70px;
+  font-size: 15px;
+  line-height: 70px;
+  /* padding-left: 3rem; */
+	/* padding-left: 20px; */
+  border-top: 1px solid #e7e7e7;
+}
+
+.plan__step a{
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+	position: absolute;
+	left: 0;
+}
+
+.plan__step-3{border-bottom: 1px solid #e7e7e7;}
+
+.plan-paw{padding-left: 6%}
+.plan__orange{padding-left:9%}
+
+
+
+.plan__step span{
+	font-size: 25px;
+	margin-right: 10px;
+}
+
+.plan__hover {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  cursor: pointer;
+	
+}
+
+.plan__hover-1 {
+  top: 0;
+}
+
+.plan__hover-1:hover ~ .plan__highlighter {
+  transform: translateY(0);
+}
+
+.plan__hover-1:hover ~ .plan__highlighter .plan__steps {
+  transform: translateY(0);
+}
+
+.plan__hover-2 {
+  top: 70px;
+}
+
+.plan__hover-2:hover ~ .plan__highlighter {
+  transform: translateY(70px);
+}
+
+.plan__hover-2:hover ~ .plan__highlighter .plan__steps {
+  transform: translateY(-70px);
+}
+
+.plan__hover-3 {
+  top: 140px;
+}
+
+.plan__hover-3:hover ~ .plan__highlighter {
+  transform: translateY(140px);
+}
+
+.plan__hover-3:hover ~ .plan__highlighter .plan__steps {
+  transform: translateY(-140px);
+}
+
+
+
+.plan__highlighter {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: -3%;
+  width: 106%;
+  height: 70px;
+ /*  background: #ff9f05; */
+ background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.5s;
+  color: #fff;
+
+
+
+
+  overflow: hidden;
+  box-shadow: 0 0.3rem 0.2rem rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s cubic-bezier(0.59, 0.04, 0.3, 1.43);
+	border-radius: 5px;
+}
+
+.plan__highlighter .plan__steps {
+  transition: transform 0.5s cubic-bezier(0.59, 0.04, 0.3, 1.43);
+}
+
+.plan__highlighter .plan__step {
+  color: #fff;
+  border: none;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 06 모달 서브 */
+
+.planStep_list{ 
+	margin:0 auto; 
+	width:1000px;  
+	box-sizing:border-box;
+}
+.planStep_list li{
+	float:left; 
+	width:150px; 
+	height:150px; 
+	margin-left:20px;
+	margin-bottom:20px;
+	background:orange;
+}
+.planStep_list li a{
+	font-size:30px;
+	font-weight:bold;
+	color:#fff;
+}
+
+
+/* POPUP BOX ---------------------*/
+
+#sec06_popup{ /*검정배경*/
+	display:none; 
+	position:fixed; 
+	left:0; 
+	top:0;
+	width:100%; 
+	height:100%; 
+	background:rgba(0,0,0,0.7); 
+	z-index:1000;
+	overflow-y:scroll; 
+	/*auto로 하면 스크롤바의 폭때문에 콘텐츠와 버튼사이의 간격이 생김->버튼위치맞춤*/
+}
+
+/*각 목록별 나오는 모달팝업 내용 나오는 부분*/
+
+.pop_body_06{   /*팝업내용박스*/
+	position:relative;
+	height:100%;	
+	margin:0 auto;
+	width:1000px;
+	background:#fff;
+	z-index:10000;
+}
+.pop_06>li{
+	width:1000px;
+	position:absolute;
+	text-align:center;
+	background:#fff;
+	display:none;
+}
+.pop_06>li p{
+	text-align:center;
+	font-size:30px;
+}
+
+/*버튼영역*/ 
+.m_btn_06{
+	position:fixed;
+	left:50%;
+	top:0px;
+	margin-left:492px;
+	width:80px;
+	height:150px;
+	color:#fff;
+	text-align:center;
+	overflow:hidden;
+	z-index:10000;
+}
+.m_btn_06>li{
+	cursor:pointer;
+	overflow:hidden;
+	background:#e29393;
+}
+.m_btn_06>li:hover{background:#de7575;}
+
+ /*닫기버튼*/
+.m_btn_06 .btn_close_06{
+	height:70px;
+	width:80px;
+	cursor:pointer;
+	border-bottom:1px solid #ecc2c2;
+}
+.m_btn_06 .btn_close_06 i{  /*아이콘폰트*/
+	position:relative;
+	top:15px;
+	font-size:40px;
+}
+
+/*다음이전 버튼*/
+
+.m_btn_06 .left_btn_06, .m_btn_06 .right_btn_06{float:left;}
+
+.m_btn_06 .left_btn_06 i,.m_btn_06 .right_btn_06 i{ 
+	position:relative;
+	top:10px;
+	font-size:30px;	
+	width:40px;
+	height:50px;	
+}
+
+.m_btn_06 .g_page_06{  /*Page번호*/
+	font-size:12px;
+	color:#fff;
+	width:80px;
+	padding-top:10px;
+	height:50px;
+	text-align:center;
+}
 
 
