@@ -454,19 +454,20 @@ $(".sec05_pop").click(function(){
 
 
 
+//06-1
 
-//06
 	//리스트 이미지 클릭시.....
-  $(".planStep_list>li").click(function(){
+  $(".sec06_plan_steps>li:not(:last-child)").click(function(){
 
     g_pop6=$(this).index();
 
     $(".g_page_06 span:nth-child(1)").text(g_pop6+1); //오른쪽 상단 페이지 넘버
     $("html").css({overflowY:"hidden"}); //기존 html 스크롤 숨기기
-		$(".pop_06>li").eq(g_pop6).show(); //g_pop index에 해당하는 팝업보이기
-		$("#sec06_popup").stop().fadeIn(); //검정배경
-
+		$(".pop_06>li").eq(g_pop6).show(); //g_pop6 index에 해당하는 팝업보이기
+		$("#popup_06").stop().fadeIn(); //검정배경
+    
   });
+
 
 
   //오른쪽 상단 버튼-다음보기
@@ -503,10 +504,398 @@ $(".sec05_pop").click(function(){
   $(".btn_close_06").click(function(){ 
     
     $("html").css({overflowY:"scroll"});
-		$("#sec06_popup").stop(true,true).fadeOut();
+		$("#popup_06").stop(true,true).fadeOut();
 		$(".pop_06>li").stop(true,true).hide();
 
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//06-2
+
+	//리스트 이미지 클릭시.....
+  $(".sec06_plan_steps_02>li:not(:last-child)").click(function(){
+
+    g_pop6_2=$(this).index();
+
+    $(".g_page_06_02 span:nth-child(1)").text(g_pop6_2+1); //오른쪽 상단 페이지 넘버
+    $("html").css({overflowY:"hidden"}); //기존 html 스크롤 숨기기
+		$(".pop_06_02>li").eq(g_pop6_2).show(); //g_pop6_2 index에 해당하는 팝업보이기
+		$("#popup_06_02").stop().fadeIn(); //검정배경
+    
+  });
+
+
+
+  //오른쪽 상단 버튼-다음보기
+  $(".right_btn_06_02").click(function(){
+
+    if(g_pop6_2<2){
+
+      $(".pop_06_02>li").eq(g_pop6_2).stop().fadeOut(); //기존거 사라짐
+			g_pop6_2++;
+
+			$(".g_page_06_02 span:nth-child(1)").text(g_pop6_2+1);
+			$(".pop_06_02>li").eq(g_pop6_2).stop().fadeIn();
+
+    }
+
+  });
+
+
+  //오른쪽 상단 버튼-이전보기
+  $(".left_btn_06_02").click(function(){
+
+    if(g_pop6_2>0){
+      $(".pop_06_02>li").eq(g_pop6_2).stop().fadeOut(); //기존거 사라짐
+      g_pop6_2--;
+
+      $(".g_page_06_02 span:nth-child(1)").text(g_pop6_2+1);
+      $(".pop_06_02>li").eq(g_pop6_2).stop().fadeIn();
+    }
+
+  });
+
+
+  //오른쪽 상단 버튼-닫기
+  $(".btn_close_06_02").click(function(){ 
+    
+    $("html").css({overflowY:"scroll"});
+		$("#popup_06_02").stop(true,true).fadeOut();
+		$(".pop_06_02>li").stop(true,true).hide();
+
+  });
+
+
+
+  
+
+//06-3
+
+	//리스트 이미지 클릭시.....
+  $(".sec06_plan_steps_03>li:not(:last-child)").click(function(){
+
+    g_pop6_3=$(this).index();
+
+    $(".g_page_06_03 span:nth-child(1)").text(g_pop6_3+1); //오른쪽 상단 페이지 넘버
+    $("html").css({overflowY:"hidden"}); //기존 html 스크롤 숨기기
+		$(".pop_06_03>li").eq(g_pop6_3).show(); //g_pop6_3 index에 해당하는 팝업보이기
+		$("#popup_06_03").stop().fadeIn(); //검정배경
+    
+  });
+
+
+
+  //오른쪽 상단 버튼-다음보기
+  $(".right_btn_06_03").click(function(){
+
+    if(g_pop6_3<2){
+
+      $(".pop_06_03>li").eq(g_pop6_3).stop().fadeOut(); //기존거 사라짐
+			g_pop6_3++;
+
+			$(".g_page_06_03 span:nth-child(1)").text(g_pop6_3+1);
+			$(".pop_06_03>li").eq(g_pop6_3).stop().fadeIn();
+
+    }
+
+  });
+
+
+  //오른쪽 상단 버튼-이전보기
+  $(".left_btn_06_03").click(function(){
+
+    if(g_pop6_3>0){
+      $(".pop_06_03>li").eq(g_pop6_3).stop().fadeOut(); //기존거 사라짐
+      g_pop6_3--;
+
+      $(".g_page_06_03 span:nth-child(1)").text(g_pop6_3+1);
+      $(".pop_06_03>li").eq(g_pop6_3).stop().fadeIn();
+    }
+
+  });
+
+
+  //오른쪽 상단 버튼-닫기
+  $(".btn_close_06_03").click(function(){ 
+    
+    $("html").css({overflowY:"scroll"});
+		$("#popup_06_03").stop(true,true).fadeOut();
+		$(".pop_06_03>li").stop(true,true).hide();
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //06 gallery-1
+  
+
+  //썸네일, 큰 이미지,설명텍스트가 바뀐느 함수 만들기
+  let old_pic=0;  //기존이미지
+  let selece_pic=0;  //선택되는이미지
+
+  function galleryImg(selece_pic){  //selece_pic는 선택되는 이미지
+
+    if(old_pic!=selece_pic){//기존이미지와 선택된이미지가 다를때...
+
+      $(".thumbs li").eq(old_pic).css({"opacity":0.3}); //기존썸네일 흐리게
+      $(".thumbs li").eq(selece_pic).css({"opacity":1}); //선택된썸네일 선명하게
+      $(".largeImg li").eq(old_pic).stop().fadeOut(300); //기존이미지사라짐
+      $(".largeImg li").eq(selece_pic).stop().fadeIn(300);//선택된이미지 나타남
+
+    }
+    old_pic=selece_pic; //선택된이미지는 다시 기존이미지로 지정
+  }
+
+
+
+
+
+  //썸네일버튼 클릭시.......
+
+  $(".thumbs li").click(function(){
+    
+    selece_pic=$(this).index();
+    galleryImg(selece_pic);
+  });
+
+
+
+
+
+
+  //이전버튼 클릭시.......
+
+
+
+  $(".gal06_left_btn").click(function(){
+    
+    selece_pic--;
+    if(selece_pic<0){ //선택이미지가 0일때 다시 맨뒤부터 시작
+      selece_pic=9;
+    }
+    galleryImg(selece_pic);
+  });
+
+
+
+  //다음버튼 클릭시.......
+  $(".gal06_right_btn").click(function(){
+    
+    selece_pic++;
+    if(selece_pic>9){ //선택이미지가 마지막일때 다시 처음부터 시작
+      selece_pic=0;
+    }
+    galleryImg(selece_pic);
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  //06 gallery-2
+  
+
+  //썸네일, 큰 이미지,설명텍스트가 바뀐느 함수 만들기
+  let old_pic2=0;  //기존이미지
+  let selece_pic2=0;  //선택되는이미지
+
+  function galleryImg_02(selece_pic2){  //selece_pic2는 선택되는 이미지
+
+    if(old_pic2!=selece_pic2){//기존이미지와 선택된이미지가 다를때...
+
+      $(".thumbs_02 li").eq(old_pic2).css({"opacity":0.3}); //기존썸네일 흐리게
+      $(".thumbs_02 li").eq(selece_pic2).css({"opacity":1}); //선택된썸네일 선명하게
+      $(".largeImg_02 li").eq(old_pic2).stop().fadeOut(300); //기존이미지사라짐
+      $(".largeImg_02 li").eq(selece_pic2).stop().fadeIn(300);//선택된이미지 나타남
+
+
+    }
+    old_pic2=selece_pic2; //선택된이미지는 다시 기존이미지로 지정
+  }
+
+
+
+
+
+  //썸네일버튼 클릭시....... 몇번째클릭할지모르기때문에 인덱스 필요
+
+  $(".thumbs_02 li").click(function(){
+    
+    selece_pic2=$(this).index();
+    galleryImg_02(selece_pic2);
+  });
+
+
+
+
+
+
+  //이전버튼 클릭시.......
+
+
+
+  $(".gal06_left_btn_02").click(function(){
+    
+    selece_pic2--;
+    if(selece_pic2<0){ //선택이미지가 0일때 다시 맨뒤부터 시작
+      selece_pic2=9;
+    }
+    galleryImg_02(selece_pic2);
+  });
+
+
+
+  //다음버튼 클릭시.......
+  $(".gal06_right_btn_02").click(function(){
+    
+    selece_pic2++;
+    if(selece_pic2>9){ //선택이미지가 마지막일때 다시 처음부터 시작
+      selece_pic2=0;
+    }
+    galleryImg_02(selece_pic2);
+  });
+
+
+
+
+
+
+  
+  
+  //06 gallery-3
+  
+
+  //썸네일, 큰 이미지,설명텍스트가 바뀐느 함수 만들기
+  let old_pic3=0;  //기존이미지
+  let selece_pic3=0;  //선택되는이미지
+
+  function galleryImg_03(selece_pic3){  //selece_pic3는 선택되는 이미지
+
+    if(old_pic3!=selece_pic3){//기존이미지와 선택된이미지가 다를때...
+
+      $(".thumbs_03 li").eq(old_pic3).css({"opacity":0.3}); //기존썸네일 흐리게
+      $(".thumbs_03 li").eq(selece_pic3).css({"opacity":1}); //선택된썸네일 선명하게
+      $(".largeImg_03 li").eq(old_pic3).stop().fadeOut(300); //기존이미지사라짐
+      $(".largeImg_03 li").eq(selece_pic3).stop().fadeIn(300);//선택된이미지 나타남
+
+
+    }
+    old_pic3=selece_pic3; //선택된이미지는 다시 기존이미지로 지정
+  }
+
+
+
+
+
+  //썸네일버튼 클릭시....... 몇번째클릭할지모르기때문에 인덱스 필요
+
+  $(".thumbs_03 li").click(function(){
+    
+    selece_pic3=$(this).index();
+    galleryImg_03(selece_pic3);
+  });
+
+
+
+
+
+
+  //이전버튼 클릭시.......
+
+
+
+  $(".gal06_left_btn_03").click(function(){
+    
+    selece_pic3--;
+    if(selece_pic3<0){ //선택이미지가 0일때 다시 맨뒤부터 시작
+      selece_pic3=9;
+    }
+    galleryImg_03(selece_pic3);
+  });
+
+
+
+  //다음버튼 클릭시.......
+  $(".gal06_right_btn_03").click(function(){
+    
+    selece_pic3++;
+    if(selece_pic3>9){ //선택이미지가 마지막일때 다시 처음부터 시작
+      selece_pic3=0;
+    }
+    galleryImg_03(selece_pic3);
+  });
+
+
+
+
+
 
 
 
