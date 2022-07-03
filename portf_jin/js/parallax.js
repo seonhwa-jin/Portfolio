@@ -54,7 +54,7 @@ $(document).ready(function() {
     });
     
 	/* Next/prev and primary nav btn click handlers */
-	$('a.sec01').click(function(){
+	$('a.sec01, a.contact').click(function(){
     	$('html, body').animate({
 				scrollTop:$('#sec01').offset().top
     	}, 600, function() {
@@ -147,7 +147,7 @@ function redrawDotNav(){
 		$('nav#primary a.sec04').addClass('active');
 	} else if ($(document).scrollTop() >= section5Top && $(document).scrollTop() < section6Top){
 		$('nav#primary a.sec05').addClass('active');
-	} else if ($(document).scrollTop() >= section6Top){
+	} else if ($(document).scrollTop() >= section6Top && $(document).scrollTop() < 7000){
 		$('nav#primary a.sec06').addClass('active');
 	}
 	

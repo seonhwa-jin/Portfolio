@@ -7,13 +7,18 @@ $(document).ready(function(){
   //main
   $(window).scroll(function(){ //브라우저에 스크롤이 발생하는 순간부터 
 		 let curpos=$(window).scrollTop(); 
-		/*$(".jinlogo").stop().animate({top:curpos},"fast");
 
-    if($(this).scrollTop()>545){
-      $(".jinlogo").fadeOut();
-    }else{
-      $(".jinlogo").fadeIn();
-    } */
+
+
+     if (curpos>=930) {
+       $(".skill_ul li:nth-child(1) .skill_bar, .skill_ul li:nth-child(3) .skill_bar, .skill_ul li:nth-child(1) .skill_bar2, .skill_ul li:nth-child(3) .skill_bar2").addClass("skills1");
+       $(".skill_ul li:nth-child(2) .skill_bar,.skill_ul li:nth-child(4) .skill_bar, .skill_ul li:nth-child(2) .skill_bar2,.skill_ul li:nth-child(4) .skill_bar2").addClass("skills2");
+       $(".skill_ul li:nth-child(5) .skill_bar, .skill_ul li:nth-child(5) .skill_bar2").addClass("skills3");
+     } else {
+       $(".skill_bar").removeClass("skills1 skills2 skills3");
+     }
+
+
 
     $("#txt1").text($(this).scrollTop());
 
@@ -24,7 +29,7 @@ $(document).ready(function(){
     }else if($(this).scrollTop()>30 && $(this).scrollTop()<200){
       $(".main_blue").stop().animate({top:curpos+100},"normal");
     } else if($(this).scrollTop()<201){
-      $("main_blue").stop().animate({top:100},"normal");
+      $(".main_blue").stop().animate({top:100},"normal");
     } 
 
     if($(this).scrollTop()<29){
@@ -32,7 +37,7 @@ $(document).ready(function(){
     }else if($(this).scrollTop()>30 && $(this).scrollTop()<200){
       $(".main_gold").stop().animate({top:curpos},"slow");
     } else if($(this).scrollTop()<201){
-      $("main_gold").stop().animate({top:0},"slow");
+      $(".main_gold").stop().animate({top:0},"slow");
     } 
 
     if($(this).scrollTop()<29){
@@ -40,35 +45,19 @@ $(document).ready(function(){
     }else if($(this).scrollTop()>30 && $(this).scrollTop()<200){
       $(".main_text").stop().animate({top:curpos+250},"slow");
     } else if($(this).scrollTop()<201){
-      $("main_text").stop().animate({top:0},"slow");
+      $(".main_text").stop().animate({top:0},"slow");
     } 
 
-
-    /*if($(this).scrollTop()>200 && $(this).scrollTop()<415){
-      $(".main_blue").stop().animate({top:curpos},"fast");
-    }else if($(this).scrollTop()<416){
-      $("main_blue").stop().animate({top:415},"fast");
-    } else{
-      $("main_blue").stop().animate({top:10},"fast");
-    }   */
-
-  /*   if($(this).scrollTop()<149){
-      $(".main_gold").stop().animate({top:curpos+200},"normal");
-    }else if($(this).scrollTop()>150){
-      $(".main_gold").stop().animate({top:curpos},"normal");
-    } 
- */
-    /* if($(this).scrollTop()>300 && $(this).scrollTop()<415){
-      $(".main_gold").stop().animate({top:curpos},"fast");
-    }else{
-      $(".main_gold").stop().animate({top:415},"fast")
-    }  */
 
     if($(this).scrollTop()>300){
       $(".jinlogo").fadeOut();
     }else{
       $(".jinlogo").fadeIn();
     } 
+
+    if($(this).scrollTop()>6600){
+      $(".thanks_position").stop().animate({"opacity":"1","right":"20px"});
+    }
     
 	});
 
@@ -805,7 +794,7 @@ $(".sec05_pop").click(function(){
     
     selece_pic2--;
     if(selece_pic2<0){ //선택이미지가 0일때 다시 맨뒤부터 시작
-      selece_pic2=9;
+      selece_pic2=8;
     }
     galleryImg_02(selece_pic2);
   });
@@ -816,7 +805,7 @@ $(".sec05_pop").click(function(){
   $(".gal06_right_btn_02").click(function(){
     
     selece_pic2++;
-    if(selece_pic2>9){ //선택이미지가 마지막일때 다시 처음부터 시작
+    if(selece_pic2>8){ //선택이미지가 마지막일때 다시 처음부터 시작
       selece_pic2=0;
     }
     galleryImg_02(selece_pic2);
@@ -895,11 +884,166 @@ $(".sec05_pop").click(function(){
 
 
 
+  
+  //06 gallery-4
+  
+
+  //썸네일, 큰 이미지,설명텍스트가 바뀐느 함수 만들기
+  let old_pic4=0;  //기존이미지
+  let selece_pic4=0;  //선택되는이미지
+
+  function galleryImg_04(selece_pic4){  //selece_pic4는 선택되는 이미지
+
+    if(old_pic4!=selece_pic4){//기존이미지와 선택된이미지가 다를때...
+
+      $(".thumbs_04 li").eq(old_pic4).css({"opacity":0.3}); //기존썸네일 흐리게
+      $(".thumbs_04 li").eq(selece_pic4).css({"opacity":1}); //선택된썸네일 선명하게
+      $(".largeImg_04 li").eq(old_pic4).stop().fadeOut(300); //기존이미지사라짐
+      $(".largeImg_04 li").eq(selece_pic4).stop().fadeIn(300);//선택된이미지 나타남
+
+
+    }
+    old_pic4=selece_pic4; //선택된이미지는 다시 기존이미지로 지정
+  }
 
 
 
 
 
+  //썸네일버튼 클릭시....... 몇번째클릭할지모르기때문에 인덱스 필요
+
+  $(".thumbs_04 li").click(function(){
+    
+    selece_pic4=$(this).index();
+    galleryImg_04(selece_pic4);
+  });
+
+
+
+
+
+
+  //이전버튼 클릭시.......
+
+
+
+  $(".gal06_left_btn_04").click(function(){
+    
+    selece_pic4--;
+    if(selece_pic4<0){ //선택이미지가 0일때 다시 맨뒤부터 시작
+      selece_pic4=9;
+    }
+    galleryImg_04(selece_pic4);
+  });
+
+
+
+  //다음버튼 클릭시.......
+  $(".gal06_right_btn_04").click(function(){
+    
+    selece_pic4++;
+    if(selece_pic4>9){ //선택이미지가 마지막일때 다시 처음부터 시작
+      selece_pic4=0;
+    }
+    galleryImg_04(selece_pic4);
+  });
+
+
+
+
+
+
+  //06
+  //호버시 하단 서브메뉴 나오게
+
+
+  $(".plan").mouseenter(function(){
+    $(this).find(".sec06_plan_list").css({"height":"210px"}); 
+    $(this).find(".sec06_bot").css({"opacity":"1"}); 
+  })
+
+  $(".plan").mouseleave(function(){
+    $(this).find(".sec06_plan_list").css({"height":"540px"});
+    $(this).find(".sec06_bot").css({"opacity":"0"});
+  })
+
+
+
+  //06 하단 btn 클릭 모달
+
+
+
+  //06-1 버튼
+  //각 목록을 클릭했을때.....
+  $(".bot_btn1").click(function(){ 
+    $(this).next().show(); //다음 형제인 .pop을 보이게함
+    $("html").css({overflowY:"hidden"}); //스크롤바 없앰 
+    $(".sec06_plan_list").css({"opacity":"0"}); 
+    $(".square2").css({"opacity":"0"}); 
+    $(".square3").css({"opacity":"0"}); 
+    return false;
+  });
+
+   //06-2 버튼
+  //각 목록을 클릭했을때.....
+  $(".bot_btn2").click(function(){ 
+    $(this).next().show(); //다음 형제인 .pop을 보이게함
+    $("html").css({overflowY:"hidden"}); //스크롤바 없앰 
+    $(".sec06_plan_list").css({"opacity":"0"}); 
+    $(".square1").css({"opacity":"0"}); 
+    $(".square3").css({"opacity":"0"}); 
+    $('#ttee2').attr('src', $('#ttee2').attr('src'));
+    return false;
+  });
+
+   //06-3 버튼
+  //각 목록을 클릭했을때.....
+  $(".bot_btn3").click(function(){ 
+    $(this).next().show(); //다음 형제인 .pop을 보이게함
+    $("html").css({overflowY:"hidden"}); //스크롤바 없앰 
+    $(".sec06_plan_list").css({"opacity":"0"}); 
+    $(".square1").css({"opacity":"0"}); 
+    $(".square2").css({"opacity":"0"}); 
+    return false;
+  });
+
+
+  //close버튼과 검정배경영역을 클릭할때.....
+  $(".close_tomato, .pop_tomato, .close").click(function(){
+    $(".pop_tomato").hide(); //.pop을 안보이게함
+    $("html").css({"overflow-y":"scroll"});//html스크롤 다시 보이게 함	
+    $(".sec06_plan_list").css({"opacity":"1"}); 
+    $(".square1").css({"opacity":"1"}); 
+    $(".square2").css({"opacity":"1"}); 
+    $(".square3").css({"opacity":"1"}); 
+  });  
+
+
+
+
+  //마무리인사
+
+  $(".thanks").click(function(){
+    $(this).animate({"width":"1260px","height":"370px"},300); 
+    $(this).css({"animation":"none"}); 
+    $(this).find(".material-icons").css({"opacity":"0"}); 
+    $(".thanks_text").css({"opacity":"1"}); 
+    $("#sideBar").fadeOut();
+  })
+
+  $(".thanks_x").click(function(){
+    $(".thanks").animate({"width":"100px","height":"50px"},300); 
+    $(".thanks").css({"animation":"bounce 0.4s ease infinite alternate"}); 
+    $(".thanks").find(".material-icons").css({"opacity":"1"}); 
+    $(".thanks_text").css({"opacity":"0"}); 
+    $("#sideBar").fadeIn();
+  })
+  
+
+  //컨택버튼
+  $(".contact").click(function(){
+    $(".bubble").css({"animation":"bounce 0.4s ease infinite alternate","top":"20px"});
+});
 
 
 
